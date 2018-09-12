@@ -8,10 +8,12 @@ public class UserInput {
 
     public UserInput() {
         _firstInput = "";
+        _secondInput = "";
+        _thirdInput = "";
 
     }
 
-    public static String inputGetter() {
+    public String inputGetter() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("X or O?");
