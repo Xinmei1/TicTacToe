@@ -10,7 +10,6 @@ public class UserInput {
         _firstInput = "";
         _secondInput = "";
         _thirdInput = "";
-
     }
 
     public String inputGetter() {
