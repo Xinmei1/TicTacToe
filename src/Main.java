@@ -10,6 +10,7 @@ public class Main {
 
         //loop for playing TicTacToe
         int i = 0;
+
         while (i < 9) {
 
             //invoke input getter from the input class, returns a string
@@ -19,8 +20,13 @@ public class Main {
 
             //print updated grid
             PlayerGrid.printGrid();
+<<<<<<< HEAD
 
             //checks if the grid's win condition is fulfilled
+=======
+            //tests if there is 3 in a row or not
+
+>>>>>>> f6b38618bced946dd41956540c1bef1c1588f97c
             if (PlayerGrid.returnsWin()) {
                 System.out.println("YOU WIN! GOOD JOB");
                 i = 9;
