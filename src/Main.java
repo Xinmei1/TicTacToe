@@ -1,5 +1,4 @@
 public class Main {
-    //Whatever the master changes, all must follow, muhuhahahaha
 
     public static void main(String[] args) {
 
