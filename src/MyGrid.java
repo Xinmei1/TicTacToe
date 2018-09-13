@@ -1,5 +1,6 @@
 public class MyGrid {
 
+    //<editor-fold desc="Field Variable Declarations">
     private String _userInput;
     private String _r1c1;
     private String _r1c2;
@@ -11,6 +12,7 @@ public class MyGrid {
     private String _r3c2;
     private String _r3c3;
     private String _finalGrid;
+    //</editor-fold>
 
     public MyGrid() {
 
@@ -26,8 +28,8 @@ public class MyGrid {
 
     }
 
-    public void setGrid(String inputxo) {
-        _userInput = inputxo;
+    public void setGrid(String playerinput) {
+        _userInput = playerinput;
         if (this._userInput.equals("X11")) {
             this._r1c1 = "X";
         } else if (this._userInput.equals("X12")) {
