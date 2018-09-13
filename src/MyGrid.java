@@ -13,7 +13,7 @@ public class MyGrid {
     private String _finalGrid;
 
     public MyGrid(){
-        
+
         _r1c1 = "_";
         _r1c2 = "_";
         _r1c3 = "_";
