@@ -2,8 +2,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //testing secondary safer way to merge branch with master. this way preserves a clean copy of master
-
         //Generates a new object from the MyGrid class
         MyGrid PlayerGrid = new MyGrid();
 
@@ -11,6 +9,7 @@ public class Main {
         UserInput PlayerOneInput = new UserInput();
 
         int i = 0;
+
         while (i < 9) {
 
             String inputXO = PlayerOneInput.inputGetter();
@@ -23,7 +22,6 @@ public class Main {
             //print updated grid
             PlayerGrid.printGrid();
             //tests if there is 3 in a row or not
-
 
             if (PlayerGrid.returnsWin()) {
                 System.out.println("YOU WIN! GOOD JOB");
