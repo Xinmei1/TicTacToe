@@ -8,6 +8,7 @@ public class UserInput {
 
     public UserInput() {
 
+        //just seeing what 2 veered off branches from the main looks like
         _firstInput = "";
         _secondInput = "";
         _thirdInput = "";
