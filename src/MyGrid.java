@@ -91,14 +91,13 @@ public class MyGrid {
         }
 
         //checks backwards diagonal
-        if (this._r1c1.equals(this._r2c2)) {
+        else if (this._r1c1.equals(this._r2c2)) {
             return this._r1c1.equals(this._r3c3);
+        }
 
-
-        } else if (this._r2c1.equals(this._r2c2) && !this._r2c2.equals("_") && !this._r2c2.equals("")) {
-            if (this._r2c1.equals(this._r2c3)) {
-                return true;
-            }
+        //checks second column
+        else if (this._r2c1.equals(this._r2c2) && !this._r2c2.equals("_") && !this._r2c2.equals("")) {
+            return this._r2c1.equals(this._r2c3);
 
         } else if (this._r3c1.equals(this._r3c2) && !this._r3c1.equals(" ")) {
             if (this._r3c1.equals(this._r3c3)) {
