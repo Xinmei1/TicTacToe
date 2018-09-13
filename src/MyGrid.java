@@ -85,16 +85,16 @@ public class MyGrid {
     // method for checking if the game is over or not
     public boolean returnsWin() {
 
-        //this checks the first row
+        //checks the first row
         if (this._r1c1.equals(this._r1c2) && !this._r1c1.equals("_")) {
-            if (this._r1c2.equals(this._r1c3)) {
-                return this._r1c2.equals(this._r1c3);
-            }
+            return this._r1c1.equals(this._r1c3);
 
-        } else if (this._r1c1.equals(this._r2c2)) {
-            if (this._r2c2.equals(this._r3c3)) {
-                return true;
-            }
+            //checks backwards diagonal
+        }
+
+        if (this._r1c1.equals(this._r2c2)) {
+            return this._r1c1.equals(this._r3c3);
+
 
         } else if (this._r2c1.equals(this._r2c2) && !this._r2c2.equals("_") && !this._r2c2.equals("")) {
             if (this._r2c1.equals(this._r2c3)) {
