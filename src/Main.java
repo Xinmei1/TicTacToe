@@ -2,6 +2,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //comment to test merging branches into master
+
         //Generates a new object from the MyGrid class
         MyGrid PlayerGrid = new MyGrid();
 
