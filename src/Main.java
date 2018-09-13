@@ -7,7 +7,7 @@ public class Main {
         MyGrid PlayerGrid = new MyGrid();
         UserInput PlayerOneInput = new UserInput();
 
-        for (int i=0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
 
             String inputXO = PlayerOneInput.inputGetter();
 
@@ -21,9 +21,9 @@ public class Main {
             //tests if there is 3 in a row or not
 
 
-            if (PlayerGrid.returnsWin()){
+            if (PlayerGrid.returnsWin()) {
                 System.out.println("YOU WIN! GOOD JOB");
-                i=9;
+                i = 9;
             }
         }
 
