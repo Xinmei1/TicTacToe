@@ -29,6 +29,11 @@ public class MyGrid {
     }
 
     public void setGrid(String playerinput) {
+
+        //commented this to test out
+        // multiple branching. master should not have this,
+        // betterwinlogic branch should not have this
+
         if (playerinput.equals("X11")) {
             this._r1c1 = "X";
         } else if (playerinput.equals("X12")) {
