@@ -81,11 +81,6 @@ public class MyGrid {
 
     }
 
-<<<<<<< HEAD
-    //I really need to fix this logic
-=======
-    // method for checking if the game is over or not
->>>>>>> f6b38618bced946dd41956540c1bef1c1588f97c
     public boolean returnsWin() {
         if (this._r1c1.equals(this._r1c2) && !this._r1c1.equals("_")) {
             if (this._r1c2.equals(this._r1c3)) {
