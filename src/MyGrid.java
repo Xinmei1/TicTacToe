@@ -77,6 +77,7 @@ public class MyGrid {
         System.out.println(_finalGrid);
     }
 
+    // method for checking if the game is over or not
     public boolean returnsWin() {
         if (this._r1c1.equals(this._r1c2) && !this._r1c1.equals("_")) {
             if (this._r1c2.equals(this._r1c3)) {
