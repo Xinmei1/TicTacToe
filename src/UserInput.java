@@ -7,9 +7,11 @@ public class UserInput {
     private String _thirdInput;
 
     public UserInput() {
+
         _firstInput = "";
         _secondInput = "";
         _thirdInput = "";
+
     }
 
     public String inputGetter() {
