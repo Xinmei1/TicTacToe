@@ -99,7 +99,10 @@ public class MyGrid {
         else if (this._r2c1.equals(this._r2c2) && !this._r2c2.equals("_") && !this._r2c2.equals("")) {
             return this._r2c1.equals(this._r2c3);
 
-        } else if (this._r3c1.equals(this._r3c2) && !this._r3c1.equals(" ")) {
+        }
+
+        //checks third row
+        else if (this._r3c1.equals(this._r3c2) && !this._r3c1.equals(" ")) {
             if (this._r3c1.equals(this._r3c3)) {
                 return true;
             }
