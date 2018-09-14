@@ -25,6 +25,8 @@ public class Main {
                 //load board state
                 PlayerGrid.printGrid();
 
+                //sets input
+                PlayerOneInput.inputSetter();
                 //change board state using user input
                 PlayerGrid.setGrid(PlayerOneInput.inputGetter());
 
@@ -33,6 +35,7 @@ public class Main {
 
                     //Header with menu options
                     MainMenu.helloScreen();
+
                     //load board state
                     PlayerGrid.printGrid();
 
