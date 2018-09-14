@@ -17,7 +17,7 @@ public class Main {
             //loop for playing TicTacToe
             int i = 0;
 
-            while (i < 9) {
+            while (i < 999) {
 
                 //Header with menu options
                 MainMenu.helloScreen();
@@ -42,7 +42,7 @@ public class Main {
                     //game over message
                     System.out.println("YOU WIN!" +
                             "\n\n-----GAME OVER-----\n");
-                    i = 9;
+                    i = 999;
                 }
                 i++;
             }
