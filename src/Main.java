@@ -20,8 +20,9 @@ public class Main {
 
             while (i < 9) {
 
-                //invoke input getter from the input class, returns a string
+                PlayerOneInput.inputSetter();
                 String inputXO = PlayerOneInput.inputGetter();
+
                 //changes one field variable of MyGrid every time the user inputs another String
                 PlayerGrid.setGrid(inputXO);
 

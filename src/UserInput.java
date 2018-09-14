@@ -2,21 +2,19 @@ import java.util.Scanner;
 
 public class UserInput {
 
+    //declaration of field variables
     private String _firstInput;
     private String _secondInput;
     private String _thirdInput;
 
+    //initializing field variables values inside constructor
     public UserInput() {
-
-        //just seeing what 2 veered off branches from the main looks like
         _firstInput = "";
         _secondInput = "";
         _thirdInput = "";
-
     }
 
-    public String inputGetter() {
-
+    public void inputSetter(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("X or O?");
         _firstInput = scanner.nextLine().toUpperCase();
@@ -24,7 +22,9 @@ public class UserInput {
         _secondInput = scanner.nextLine();
         System.out.println("column 1 2 or 3?");
         _thirdInput = scanner.nextLine();
+    }
 
+    public String inputGetter() {
         return _firstInput + _secondInput + _thirdInput;
     }
 
