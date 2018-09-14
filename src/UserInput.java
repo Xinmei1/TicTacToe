@@ -16,7 +16,7 @@ public class UserInput {
 
     public void inputSetter() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nX or O?");
+        System.out.println("Please select\nX or O?");
         _firstInput = scanner.nextLine().toUpperCase();
         System.out.println("Row 1 2 or 3?");
         _secondInput = scanner.nextLine();

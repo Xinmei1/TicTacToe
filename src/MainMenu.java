@@ -17,10 +17,8 @@ public class MainMenu {
     }
 
     public static void helloScreen(){
-        System.out.println("\n======================" +
-                "\n" + "Welcome to Tic Tac Toe \nStarting New Game\n" +
-                "======================\n" +
-                MyGrid.printBlankGrid() +
-                "\nPlease select");
+        System.out.println("\n=========================" +
+                "\n" + "Tic Tac Toe \n(N)ew game (P)ause (Q)uit\n" +
+                "=========================");
     }
 }

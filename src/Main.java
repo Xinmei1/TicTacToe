@@ -14,13 +14,14 @@ public class Main {
             //Generates a new object from the MyGrid class, the Game State should be reset at every new game
             MyGrid PlayerGrid = new MyGrid();
 
-            //Prints out a new screen for TicTacToe game
-            MainMenu.helloScreen();
-
             //loop for playing TicTacToe
             int i = 0;
 
             while (i < 9) {
+
+                //Prints out a new screen for TicTacToe game
+                MainMenu.helloScreen();
+                PlayerGrid.printGrid();
 
                 PlayerOneInput.inputSetter();
                 String inputXO = PlayerOneInput.inputGetter();

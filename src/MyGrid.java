@@ -71,14 +71,7 @@ public class MyGrid {
 
         System.out.println("\n" + _r1c1 + "|" + _r1c2 + "|" + _r1c3 + "\n" +
                 _r2c1 + "|" + _r2c2 + "|" + _r2c3 + "\n" +
-                _r3c1 + "|" + _r3c2 + "|" + _r3c3);
-    }
-
-    public static String printBlankGrid() {
-
-        return "\n" + "_" + "|" + "_" + "|" + "_" + "\n" +
-                "_" + "|" + "_" + "|" + "_" + "\n" +
-                " " + "|" + " " + "|" + " " + "\n";
+                _r3c1 + "|" + _r3c2 + "|" + _r3c3+"\n");
     }
 
     public boolean returnsWin() {
