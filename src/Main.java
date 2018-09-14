@@ -29,15 +29,18 @@ public class Main {
                 //changes one field variable of MyGrid every time the user inputs another String
                 PlayerGrid.setGrid(inputXO);
 
-                //print updated grid
-                PlayerGrid.printGrid();
-
                 //checks if the grid's win condition is fulfilled
                 //tests if there is 3 in a row or not
                 if (PlayerGrid.returnsWin()) {
-                    System.out.println("\nYOU WIN! GOOD JOB!" + "\n");
+
+                    MainMenu.helloScreen();
+                    PlayerGrid.printGrid();
+
+                    System.out.println("\nYOU WIN! GOOD JOB!"+
+                            "\n-------GAME OVER-------");
                     i = 9;
                 }
+
 
                 i++;
             }
