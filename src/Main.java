@@ -1,6 +1,6 @@
 public class Main {
 
-    //this is the main menu branch, only this branch shall have this comment
+    //this is the better win logic branch, only the betterwinlogic branch shall have this comment
 
     public static void main(String[] args) {
 
