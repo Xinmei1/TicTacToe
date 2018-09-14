@@ -37,7 +37,7 @@ public class Main {
                 i++;
             }
 
-            System.out.println("Do you want to play again? Y or N");
+            System.out.println("Restart Tic-Tac-Toe game? (Y)es /(N)o");
             Scanner scanner = new Scanner(System.in);
             answer = scanner.nextLine().toUpperCase();
 
