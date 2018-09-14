@@ -12,6 +12,7 @@ public class Main {
 
         String answer = "Y";
 
+        //Menu for restarting TicTacToe
         while (answer.equals("Y")) {
 
             //loop for playing TicTacToe
