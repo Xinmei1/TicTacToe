@@ -4,8 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Generates a new object from the MyGrid class
-        MyGrid PlayerGrid = new MyGrid();
 
         //Generates a new object from the UserInput class
         UserInput PlayerOneInput = new UserInput();
@@ -14,6 +12,9 @@ public class Main {
 
         //Menu for restarting TicTacToe
         while (answer.equals("Y")) {
+
+            //Generates a new object from the MyGrid class, the Game State should be reset at every new game
+            MyGrid PlayerGrid = new MyGrid();
 
             //loop for playing TicTacToe
             int i = 0;
