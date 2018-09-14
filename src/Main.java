@@ -3,7 +3,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String startgame = MainMenu.NewGame();
+        String startgame = MainMenu.newGame();
 
         //Menu for restarting TicTacToe
         while (startgame.equals("Y")) {
@@ -41,7 +41,7 @@ public class Main {
                 i++;
             }
 
-            startgame = MainMenu.RestartGame();
+            startgame = MainMenu.restartGame();
 
         }
 
