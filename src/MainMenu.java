@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class MainMenu {
 
     public static String NewGame() {
-        System.out.println("New Game (Tic-Tac-Toe)? (Y)es /(N)o");
+        System.out.println("\nCommand Line Application Game\n" +
+                "Tic-Tac-Toe\n" +
+                "\nStart New Game?\n(Y)es /(N)o");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toUpperCase();
     }
