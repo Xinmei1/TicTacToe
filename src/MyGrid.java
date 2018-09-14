@@ -75,15 +75,15 @@ public class MyGrid {
     }
 
     public boolean returnsWin() {
-        // First Row
+        // First Row, but exclude underscore
         if (_r1c1.equals(_r1c2) && _r1c1.equals(_r1c3))
-            return true;
-        else { // Second Row
+            return !(_r1c1.equals("_"));
+        else { // Second Row, but exclude underscore
             if (_r2c1.equals(_r2c2) && _r2c1.equals(_r2c3)) {
-                return true;
-            } else { // Third Row
+                return !(_r2c1.equals("_"));
+            } else { // Third Row, but exclude empty
                 if (_r3c1.equals(_r3c2) && _r3c1.equals(_r3c3)) {
-                    return true;
+                    return !(_r3c1.equals(" "));
                 } else { // First Column
                     if (_r1c1.equals(_r2c1) && _r1c1.equals(_r3c1)) {
                         return true;
