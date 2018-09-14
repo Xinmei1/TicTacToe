@@ -19,25 +19,26 @@ public class Main {
 
             while (i < 9) {
 
-                //Prints out a new screen for TicTacToe game
+                //Header with menu options
                 MainMenu.helloScreen();
+
+                //load board state
                 PlayerGrid.printGrid();
 
-                PlayerOneInput.inputSetter();
-                String inputXO = PlayerOneInput.inputGetter();
+                //change board state using user input
+                PlayerGrid.setGrid(PlayerOneInput.inputGetter());
 
-                //changes one field variable of MyGrid every time the user inputs another String
-                PlayerGrid.setGrid(inputXO);
-
-                //checks if the grid's win condition is fulfilled
-                //tests if there is 3 in a row or not
+                //checks game over
                 if (PlayerGrid.returnsWin()) {
 
+                    //Header with menu options
                     MainMenu.helloScreen();
+                    //load board state
                     PlayerGrid.printGrid();
 
-                    System.out.println("YOU WIN! GOOD JOB!" +
-                            "\n\n-------GAME OVER-------\n");
+                    //game over message
+                    System.out.println("YOU WIN!" +
+                            "\n\n-----GAME OVER-----\n");
                     i = 9;
                 }
                 i++;
