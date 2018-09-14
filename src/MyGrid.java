@@ -1,7 +1,6 @@
 public class MyGrid {
 
     //<editor-fold desc="Field Variable Declarations">
-    private String _userInput;
     private String _r1c1;
     private String _r1c2;
     private String _r1c3;
@@ -71,18 +70,17 @@ public class MyGrid {
         } else if (playerinput.equals("O33")) {
             this._r3c3 = "O";
         }
-
     }
 
     public void printGrid() {
+
         _finalGrid = _r1c1 + "|" + _r1c2 + "|" + _r1c3 + "\n" +
                 _r2c1 + "|" + _r2c2 + "|" + _r2c3 + "\n" +
                 _r3c1 + "|" + _r3c2 + "|" + _r3c3;
-
         System.out.println(_finalGrid);
+
     }
 
-    // method for checking if the game is over or not
     public boolean returnsWin() {
 
         //checks the first square for win condition
@@ -125,9 +123,6 @@ public class MyGrid {
         } else if (this._r3c1.equals(this._r2c2) && !this._r3c3.equals("_") && !this._r3c3.equals("") && this._r2c2.equals(this._r1c3)) {
             return true;
         }
-
         return false;
     }
-
-
 }

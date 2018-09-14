@@ -8,21 +8,21 @@ public class Main {
         //Generates a new object from the UserInput class
         UserInput PlayerOneInput = new UserInput();
 
+        //loop for playing TicTacToe
         int i = 0;
 
         while (i < 9) {
 
+            //invoke input getter from the input class, returns a string
             String inputXO = PlayerOneInput.inputGetter();
-
-            /*Sets grid based on user input
-            More like changes one square of the grid
-            every time the user inputs another String
-            */
+            //changes one field variable of MyGrid every time the user inputs another String
             PlayerGrid.setGrid(inputXO);
+
             //print updated grid
             PlayerGrid.printGrid();
-            //tests if there is 3 in a row or not
 
+            //checks if the grid's win condition is fulfilled
+            //tests if there is 3 in a row or not
             if (PlayerGrid.returnsWin()) {
                 System.out.println("YOU WIN! GOOD JOB");
                 i = 9;
@@ -30,5 +30,7 @@ public class Main {
 
             i++;
         }
+
     }
+
 }
