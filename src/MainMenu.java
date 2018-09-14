@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MainMenu {
 
     public static String newGame() {
-        System.out.println("\nCommand Line Application Game\n" +
+        System.out.println("\nCommand Line Application\n" +
                 "Tic-Tac-Toe\n" +
                 "\nStart New Game?\n(Y)es /(N)o");
         Scanner scanner = new Scanner(System.in);

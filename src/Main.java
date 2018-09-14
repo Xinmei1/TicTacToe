@@ -36,8 +36,8 @@ public class Main {
                     MainMenu.helloScreen();
                     PlayerGrid.printGrid();
 
-                    System.out.println("\nYOU WIN! GOOD JOB!"+
-                            "\n-------GAME OVER-------");
+                    System.out.println("YOU WIN! GOOD JOB!"+
+                            "\n\n-------GAME OVER-------\n");
                     i = 9;
                 }
 
