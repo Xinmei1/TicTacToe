@@ -78,34 +78,35 @@ public class MyGrid {
 
         //checks the first square for win condition
         if (this._r1c1.equals(this._r1c2) && !this._r1c1.equals("_")) {
-            return this._r1c1.equals(this._r1c3);
-        }
-
-        //checks backwards diagonal
-        else if (this._r1c1.equals(this._r2c2)) {
-            return this._r1c1.equals(this._r3c3);
-        }
-
-        //checks second column
-        else if (this._r2c1.equals(this._r2c2) && !this._r2c2.equals("_") && !this._r2c2.equals("")) {
-            return this._r2c1.equals(this._r2c3);
-
-        }
-
-        //checks third row
-        else if (this._r3c1.equals(this._r3c2) && !this._r3c1.equals(" ")) {
-            return this._r3c1.equals(this._r3c3);
-
-        } else if (this._r1c1.equals(this._r2c1) && !this._r1c1.equals("_")) {
-            return this._r1c1.equals(this._r3c1);
-
-        } else if (this._r1c2.equals(this._r2c2) && !this._r1c2.equals("_")) {
-            return this._r1c2.equals(this._r3c2);
-
-        } else if (this._r1c3.equals(this._r2c3) && !this._r1c3.equals("_")) {
-            return this._r1c3.equals(this._r3c3);
-
-        } else
-            return this._r3c1.equals(this._r2c2) && !this._r3c3.equals("_") && !this._r3c3.equals("") && this._r2c2.equals(this._r1c3);
+            if (this._r1c1.equals(this._r1c3)) {
+                return true;
+            } else { //checks backwards diagonal
+                if (this._r1c1.equals(this._r2c2)) {
+                    return this._r1c1.equals(this._r3c3);
+                } else {//checks second column
+                    if (this._r2c1.equals(this._r2c2) && !this._r2c2.equals("_") && !this._r2c2.equals("")) {
+                        return this._r2c1.equals(this._r2c3);
+                    } else { // checks third row
+                        if (this._r3c1.equals(this._r3c2) && !this._r3c1.equals(" ")) {
+                            return this._r3c1.equals(this._r3c3);
+                        } else {
+                            if (this._r1c1.equals(this._r2c1) && !this._r1c1.equals("_")) {
+                                return this._r1c1.equals(this._r3c1);
+                            } else {
+                                if (this._r1c2.equals(this._r2c2) && !this._r1c2.equals("_")) {
+                                    return this._r1c2.equals(this._r3c2);
+                                } else {
+                                    if (this._r1c3.equals(this._r2c3) && !this._r1c3.equals("_")) {
+                                        return this._r1c3.equals(this._r3c3);
+                                    } else {
+                                        return this._r3c1.equals(this._r2c2) && !this._r3c3.equals("_") && !this._r3c3.equals("") && this._r2c2.equals(this._r1c3);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }return false;
     }
 }
