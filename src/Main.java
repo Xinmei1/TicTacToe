@@ -34,7 +34,7 @@ public class Main {
                 //checks if the grid's win condition is fulfilled
                 //tests if there is 3 in a row or not
                 if (PlayerGrid.returnsWin()) {
-                    System.out.println("YOU WIN! GOOD JOB!" + "\n");
+                    System.out.println("\nYOU WIN! GOOD JOB!" + "\n");
                     i = 9;
                 }
 

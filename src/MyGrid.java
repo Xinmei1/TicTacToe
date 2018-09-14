@@ -73,7 +73,7 @@ public class MyGrid {
         _finalGrid = _r1c1 + "|" + _r1c2 + "|" + _r1c3 + "\n" +
                 _r2c1 + "|" + _r2c2 + "|" + _r2c3 + "\n" +
                 _r3c1 + "|" + _r3c2 + "|" + _r3c3;
-        System.out.println("\n" + _finalGrid + "\n");
+        System.out.println("\n" + _finalGrid);
 
     }
 
