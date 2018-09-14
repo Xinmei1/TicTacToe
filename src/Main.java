@@ -1,19 +1,21 @@
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String mainmenuresponse = MainMenu.NewGame();
+        String startgame = MainMenu.NewGame();
 
         //Menu for restarting TicTacToe
-        while (mainmenuresponse.equals("Y")) {
+        while (startgame.equals("Y")) {
 
             //Generates a new object from the UserInput class
             UserInput PlayerOneInput = new UserInput();
 
             //Generates a new object from the MyGrid class, the Game State should be reset at every new game
             MyGrid PlayerGrid = new MyGrid();
+
+            //Prints out a new screen for TicTacToe game
+            MainMenu.helloScreen();
 
             //loop for playing TicTacToe
             int i = 0;
@@ -39,7 +41,7 @@ public class Main {
                 i++;
             }
 
-            mainmenuresponse = MainMenu.RestartGame();
+            startgame = MainMenu.RestartGame();
 
         }
 

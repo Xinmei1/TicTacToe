@@ -13,4 +13,10 @@ public class MainMenu {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toUpperCase();
     }
+
+    public static void helloScreen(){
+        System.out.println("========================" +
+                "\n" + "Welcome to Tic Tac Toe \nStarting New Game\n" +
+                "========================\nPlease select");
+    }
 }
