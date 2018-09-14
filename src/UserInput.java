@@ -27,5 +27,4 @@ public class UserInput {
     public String inputGetter() {
         return _firstInput + _secondInput + _thirdInput;
     }
-
 }

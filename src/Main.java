@@ -36,19 +36,13 @@ public class Main {
                     MainMenu.helloScreen();
                     PlayerGrid.printGrid();
 
-                    System.out.println("YOU WIN! GOOD JOB!"+
+                    System.out.println("YOU WIN! GOOD JOB!" +
                             "\n\n-------GAME OVER-------\n");
                     i = 9;
                 }
-
-
                 i++;
             }
-
             startgame = MainMenu.restartGame();
-
         }
-
     }
-
 }
