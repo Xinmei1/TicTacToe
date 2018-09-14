@@ -12,8 +12,7 @@ public class Main {
         System.out.println("New Game (Tic-Tac-Toe)? (Y)es /(N)o");
         Scanner scanner = new Scanner(System.in);
         answer = scanner.nextLine().toUpperCase();
-
-
+        
 
         //Menu for restarting TicTacToe
         while (answer.equals("Y")) {
