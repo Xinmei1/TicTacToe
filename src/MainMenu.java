@@ -3,11 +3,9 @@ import java.util.Scanner;
 public class MainMenu {
 
     public static String NewGame() {
-
         System.out.println("New Game (Tic-Tac-Toe)? (Y)es /(N)o");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toUpperCase();
-
     }
 
     public static String RestartGame(){

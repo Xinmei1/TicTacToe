@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class UserInput {
 
-    //declaration of field variables
+    //declaration of field variables, for the Tic-Tac-Toe game
     private String _firstInput;
     private String _secondInput;
     private String _thirdInput;
