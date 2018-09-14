@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Main {
     //This is the master branch, and only the master branch shall have this comment
 
+    //this is the better win logic branch, only the betterwinlogic branch shall have this comment
+
     public static void main(String[] args) {
 
         //Generates a new object from the MyGrid class
