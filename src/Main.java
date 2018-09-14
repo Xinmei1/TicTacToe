@@ -12,7 +12,7 @@ public class Main {
 
         String answer = "Y";
 
-         while (answer == "Y") {
+        while (answer.equals("Y")) {
 
             //loop for playing TicTacToe
             int i = 0;
@@ -40,6 +40,7 @@ public class Main {
             System.out.println("Do you want to play again? Y or N");
             Scanner scanner = new Scanner(System.in);
             answer = scanner.nextLine().toUpperCase();
+
 
         }
 
