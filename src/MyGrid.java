@@ -79,7 +79,7 @@ public class MyGrid {
         //checks the first square for win condition
         if (this._r1c1.equals(this._r1c2) && !this._r1c1.equals("_")) {
             if (this._r1c1.equals(this._r1c3)) {
-                return true;
+                return !(_r1c1.equals("_"));
             } else { //checks backwards diagonal
                 if (this._r1c1.equals(this._r2c2)) {
                     return this._r1c1.equals(this._r3c3);
