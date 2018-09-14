@@ -4,11 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+        String answer ;
 
         //Generates a new object from the UserInput class
         UserInput PlayerOneInput = new UserInput();
 
-        String answer = "Y";
+        System.out.println("New Game (Tic-Tac-Toe)? (Y)es /(N)o");
+        Scanner scanner = new Scanner(System.in);
+        answer = scanner.nextLine().toUpperCase();
+
+
 
         //Menu for restarting TicTacToe
         while (answer.equals("Y")) {
@@ -40,8 +45,8 @@ public class Main {
             }
 
             System.out.println("Restart Tic-Tac-Toe game? (Y)es /(N)o");
-            Scanner scanner = new Scanner(System.in);
-            answer = scanner.nextLine().toUpperCase();
+            Scanner scanner2 = new Scanner(System.in);
+            answer = scanner2.nextLine().toUpperCase();
 
 
         }
