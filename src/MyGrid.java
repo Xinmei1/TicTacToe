@@ -75,7 +75,7 @@ public class MyGrid {
     }
 
     public boolean returnsWin() {
-<<<<<<< HEAD
+
         // First Row, but exclude underscore
         if (_r1c1.equals(_r1c2) && _r1c1.equals(_r1c3))
             return !(_r1c1.equals("_"));
@@ -90,37 +90,6 @@ public class MyGrid {
                         return true;
                     } else {
                         return false;
-=======
-
-        //checks the first square for win condition
-        if (this._r1c1.equals(this._r1c2) && !this._r1c1.equals("_")) {
-            if (this._r1c1.equals(this._r1c3)) {
-                return !(_r1c1.equals("_"));
-            } else { //checks backwards diagonal
-                if (this._r1c1.equals(this._r2c2)) {
-                    return this._r1c1.equals(this._r3c3);
-                } else {//checks second column
-                    if (this._r2c1.equals(this._r2c2) && !this._r2c2.equals("_") && !this._r2c2.equals("")) {
-                        return this._r2c1.equals(this._r2c3);
-                    } else { // checks third row
-                        if (this._r3c1.equals(this._r3c2) && !this._r3c1.equals(" ")) {
-                            return this._r3c1.equals(this._r3c3);
-                        } else {
-                            if (this._r1c1.equals(this._r2c1) && !this._r1c1.equals("_")) {
-                                return this._r1c1.equals(this._r3c1);
-                            } else {
-                                if (this._r1c2.equals(this._r2c2) && !this._r1c2.equals("_")) {
-                                    return this._r1c2.equals(this._r3c2);
-                                } else {
-                                    if (this._r1c3.equals(this._r2c3) && !this._r1c3.equals("_")) {
-                                        return this._r1c3.equals(this._r3c3);
-                                    } else {
-                                        return this._r3c1.equals(this._r2c2) && !this._r3c3.equals("_") && !this._r3c3.equals("") && this._r2c2.equals(this._r1c3);
-                                    }
-                                }
-                            }
-                        }
->>>>>>> 4d1fe5d35a26f5c12206b4cc8bed3e64e024d9e4
                     }
                 }
             }
