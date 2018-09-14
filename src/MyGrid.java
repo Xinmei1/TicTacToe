@@ -77,6 +77,16 @@ public class MyGrid {
 
     }
 
+    public static String printBlankGrid(){
+
+        String blankgrid = "_" + "|" + "_" + "|" + "_" + "\n" +
+                "_" + "|" + "_" + "|" + "_" + "\n" +
+                " " + "|" + " " + "|" + " ";
+        return "\n" + blankgrid + "\n";
+
+
+    }
+
     public boolean returnsWin() {
 
         //checks the first square for win condition
