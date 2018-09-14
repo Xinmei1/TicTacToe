@@ -79,12 +79,9 @@ public class MyGrid {
 
     public static String printBlankGrid(){
 
-        String blankgrid = "_" + "|" + "_" + "|" + "_" + "\n" +
+        return "\n"+ "_" + "|" + "_" + "|" + "_" + "\n" +
                 "_" + "|" + "_" + "|" + "_" + "\n" +
-                " " + "|" + " " + "|" + " ";
-        return "\n" + blankgrid + "\n";
-
-
+                " " + "|" + " " + "|" + " "+ "\n";
     }
 
     public boolean returnsWin() {
