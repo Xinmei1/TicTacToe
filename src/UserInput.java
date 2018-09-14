@@ -14,7 +14,7 @@ public class UserInput {
         _thirdInput = "";
     }
 
-    public void inputSetter(){
+    public void inputSetter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nX or O?");
         _firstInput = scanner.nextLine().toUpperCase();

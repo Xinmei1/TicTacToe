@@ -10,7 +10,6 @@ public class MyGrid {
     private String _r3c1;
     private String _r3c2;
     private String _r3c3;
-    private String _finalGrid;
     //</editor-fold>
 
     public MyGrid() {
@@ -70,18 +69,16 @@ public class MyGrid {
 
     public void printGrid() {
 
-        _finalGrid = _r1c1 + "|" + _r1c2 + "|" + _r1c3 + "\n" +
+        System.out.println("\n" + _r1c1 + "|" + _r1c2 + "|" + _r1c3 + "\n" +
                 _r2c1 + "|" + _r2c2 + "|" + _r2c3 + "\n" +
-                _r3c1 + "|" + _r3c2 + "|" + _r3c3;
-        System.out.println("\n" + _finalGrid);
-
+                _r3c1 + "|" + _r3c2 + "|" + _r3c3);
     }
 
-    public static String printBlankGrid(){
+    public static String printBlankGrid() {
 
-        return "\n"+ "_" + "|" + "_" + "|" + "_" + "\n" +
+        return "\n" + "_" + "|" + "_" + "|" + "_" + "\n" +
                 "_" + "|" + "_" + "|" + "_" + "\n" +
-                " " + "|" + " " + "|" + " "+ "\n";
+                " " + "|" + " " + "|" + " " + "\n";
     }
 
     public boolean returnsWin() {
@@ -104,28 +101,18 @@ public class MyGrid {
 
         //checks third row
         else if (this._r3c1.equals(this._r3c2) && !this._r3c1.equals(" ")) {
-            if (this._r3c1.equals(this._r3c3)) {
-                return true;
-            }
+            return this._r3c1.equals(this._r3c3);
 
         } else if (this._r1c1.equals(this._r2c1) && !this._r1c1.equals("_")) {
-            if (this._r1c1.equals(this._r3c1)) {
-                return true;
-            }
+            return this._r1c1.equals(this._r3c1);
 
         } else if (this._r1c2.equals(this._r2c2) && !this._r1c2.equals("_")) {
-            if (this._r1c2.equals(this._r3c2)) {
-                return true;
-            }
+            return this._r1c2.equals(this._r3c2);
 
         } else if (this._r1c3.equals(this._r2c3) && !this._r1c3.equals("_")) {
-            if (this._r1c3.equals(this._r3c3)) {
-                return true;
-            }
+            return this._r1c3.equals(this._r3c3);
 
-        } else if (this._r3c1.equals(this._r2c2) && !this._r3c3.equals("_") && !this._r3c3.equals("") && this._r2c2.equals(this._r1c3)) {
-            return true;
-        }
-        return false;
+        } else
+            return this._r3c1.equals(this._r2c2) && !this._r3c3.equals("_") && !this._r3c3.equals("") && this._r2c2.equals(this._r1c3);
     }
 }
