@@ -77,25 +77,31 @@ public class MyGrid {
     public boolean returnsWin() {
 
         // First Row, but exclude underscore
-        if (_r1c1.equals(_r1c2) && _r1c1.equals(_r1c3))
-            return !(_r1c1.equals("_"));
+        if (_r1c1.equals(_r1c2) && (_r1c1.equals(_r1c3) && !(_r1c1.equals("_"))))
+            return true;
         else { // Second Row, but exclude underscore
-            if (_r2c1.equals(_r2c2) && _r2c1.equals(_r2c3))
-                return !(_r2c1.equals("_"));
+            if (_r2c1.equals(_r2c2) && _r2c1.equals(_r2c3) && !(_r2c1.equals("_")))
+                return true;
             else { // Third Row, but exclude empty
-                if (_r3c1.equals(_r3c2) && _r3c1.equals(_r3c3))
-                    return !(_r3c1.equals(" "));
+                if (_r3c1.equals(_r3c2) && _r3c1.equals(_r3c3) && !(_r3c1.equals(" ")))
+                    return true;
                 else { // First Column
                     if (_r1c1.equals(_r2c1) && _r1c1.equals(_r3c1))
                         return true;
                     else { // Second Column
                         if (_r1c2.equals(_r2c2) && _r2c2.equals(_r3c2))
                             return true;
-                        else{ // Third Column
-                            if(_r1c3.equals(_r2c3) && _r1c3.equals(_r3c3))
+                        else { // Third Column
+                            if (_r1c3.equals(_r2c3) && _r1c3.equals(_r3c3))
                                 return true;
-                            else {
-                                return false;
+                            else { //test diagonal 1, backslash
+                                if (_r1c1.equals(_r2c2) && _r1c1.equals(_r3c3))
+                                    return true;
+                                else { // tests diagonal 2, forward slash
+                                    if (_r1c3.equals(_r2c2) && _r1c3.equals(_r3c1))
+                                        return true;
+                                    else return false;
+                                }
                             }
                         }
                     }
@@ -104,7 +110,7 @@ public class MyGrid {
         }
     }
 
-    public static void printWin(){
+    public static void printWin() {
         System.out.println("YOU WIN!" +
                 "\n\n-----GAME OVER-----\n");
     }
