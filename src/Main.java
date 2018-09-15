@@ -24,28 +24,28 @@ public class Main {
             //keeps going while you have not won, or NOT quit
             while (i < 999 && !((quitStatus.equals("Q")||(quitStatus.equals("N"))))) {
 
-                //Header with menu options
+                //Generic Header with menu options
                 MainMenu.helloScreen();
 
-                //load board state
+                //load board state of the object PlayerGrid
                 PlayerGrid.printGrid();
 
-                //sets input
+                //sets input of the object PlayerOneInput
                 PlayerOneInput.inputSetter();
-                //change board state using user input
+                //change Object PlayerGrid's (board state)/(field variables) using user input
                 PlayerGrid.setGrid(PlayerOneInput.inputGetter());
-                //checks player has not quit
+                //checks player has not quit, and updates loop conditions
                 quitStatus = PlayerOneInput.inputGetter();
 
-                //checks game over
+                //checks if object PlayerGrid's field variables have met it's wincondition method
                 if (PlayerGrid.returnsWin()) {
 
-                    //Header with menu options
+                    //Generic Header with menu options
                     MainMenu.helloScreen();
-                    //load board state
+                    //PlayerGrid object's print of it's current field variables, which is the game board
                     PlayerGrid.printGrid();
 
-                    //game over message
+                    //static game over message from MyGrid class, not an instantiated object
                     MyGrid.printWin();
 
                     i = 999;

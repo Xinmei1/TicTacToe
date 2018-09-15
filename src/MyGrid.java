@@ -12,6 +12,7 @@ public class MyGrid {
     private String _r3c3;
     //</editor-fold>
 
+    //MyGrid constructor
     public MyGrid() {
 
         _r1c1 = "_";
@@ -26,6 +27,7 @@ public class MyGrid {
 
     }
 
+    //Changes field values of grid based on player's input
     public void setGrid(String playerinput) {
 
         if (playerinput.equals("X11")) {
@@ -67,6 +69,7 @@ public class MyGrid {
         }
     }
 
+    //print the current state of the grid
     public void printGrid() {
 
         System.out.println("\n" + _r1c1 + "|" + _r1c2 + "|" + _r1c3 + "\n" +
@@ -74,6 +77,7 @@ public class MyGrid {
                 _r3c1 + "|" + _r3c2 + "|" + _r3c3 + "\n");
     }
 
+    //checks if the win conditions are met, 3 in a row, 3 in a column, 3 in a diagonal, forward and back
     public boolean returnsWin() {
 
         // First Row, but exclude underscore
@@ -110,6 +114,7 @@ public class MyGrid {
         }
     }
 
+    //Print a generic string from a static method
     public static void printWin() {
         System.out.println("YOU WIN!" +
                 "\n\n-----GAME OVER-----\n");
