@@ -3,20 +3,20 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Prompt for starting Tic-Tac-Toe game
         String startgame = MainMenu.newGame();
 
-        //Menu for restarting TicTacToe
+        //Starting Tic-Tac-Toe game
         while (startgame.equals("Y")) {
 
-            //Generates a new object from the UserInput class
+            //Generates a new object from the UserInput class, resets user input
             UserInput PlayerOneInput = new UserInput();
 
-            //Generates a new object from the MyGrid class, the Game State should be reset at every new game
+            //Generates a new object from the MyGrid class, resets grid
             MyGrid PlayerGrid = new MyGrid();
 
             //loop for playing TicTacToe
             int i = 0;
-
             while (i < 999) {
 
                 //Header with menu options
@@ -35,7 +35,6 @@ public class Main {
 
                     //Header with menu options
                     MainMenu.helloScreen();
-
                     //load board state
                     PlayerGrid.printGrid();
 
