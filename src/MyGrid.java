@@ -28,43 +28,43 @@ public class MyGrid {
     }
 
     //Changes field values of grid based on player's input
-    public void setGrid(String playerinput) {
+    public void setGrid(String playerInput) {
 
-        if (playerinput.equals("X11")) {
+        if (playerInput.equals("X11")) {
             this._r1c1 = "X";
-        } else if (playerinput.equals("X12")) {
+        } else if (playerInput.equals("X12")) {
             this._r1c2 = "X";
-        } else if (playerinput.equals("X13")) {
+        } else if (playerInput.equals("X13")) {
             this._r1c3 = "X";
-        } else if (playerinput.equals("X21")) {
+        } else if (playerInput.equals("X21")) {
             this._r2c1 = "X";
-        } else if (playerinput.equals("X22")) {
+        } else if (playerInput.equals("X22")) {
             this._r2c2 = "X";
-        } else if (playerinput.equals("X23")) {
+        } else if (playerInput.equals("X23")) {
             this._r2c3 = "X";
-        } else if (playerinput.equals("X31")) {
+        } else if (playerInput.equals("X31")) {
             this._r3c1 = "X";
-        } else if (playerinput.equals("X32")) {
+        } else if (playerInput.equals("X32")) {
             this._r3c2 = "X";
-        } else if (playerinput.equals("X33")) {
+        } else if (playerInput.equals("X33")) {
             this._r3c3 = "X";
-        } else if (playerinput.equals("O11")) {
+        } else if (playerInput.equals("O11")) {
             this._r1c1 = "O";
-        } else if (playerinput.equals("O12")) {
+        } else if (playerInput.equals("O12")) {
             this._r1c2 = "O";
-        } else if (playerinput.equals("O13")) {
+        } else if (playerInput.equals("O13")) {
             this._r1c3 = "O";
-        } else if (playerinput.equals("O21")) {
+        } else if (playerInput.equals("O21")) {
             this._r2c1 = "O";
-        } else if (playerinput.equals("O22")) {
+        } else if (playerInput.equals("O22")) {
             this._r2c2 = "O";
-        } else if (playerinput.equals("O23")) {
+        } else if (playerInput.equals("O23")) {
             this._r2c3 = "O";
-        } else if (playerinput.equals("O31")) {
+        } else if (playerInput.equals("O31")) {
             this._r3c1 = "O";
-        } else if (playerinput.equals("O32")) {
+        } else if (playerInput.equals("O32")) {
             this._r3c2 = "O";
-        } else if (playerinput.equals("O33")) {
+        } else if (playerInput.equals("O33")) {
             this._r3c3 = "O";
         }
     }
