@@ -39,8 +39,8 @@ public class Main {
                     PlayerGrid.printGrid();
 
                     //game over message
-                    System.out.println("YOU WIN!" +
-                            "\n\n-----GAME OVER-----\n");
+                    MyGrid.printWin();
+
                     i = 999;
                 }
                 i++;

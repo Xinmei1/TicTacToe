@@ -95,4 +95,9 @@ public class MyGrid {
             }
         }
     }
+
+    public static void printWin(){
+        System.out.println("YOU WIN!" +
+                "\n\n-----GAME OVER-----\n");
+    }
 }
