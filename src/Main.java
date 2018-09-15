@@ -53,9 +53,12 @@ public class Main {
                 i++;
             }
 
-            if (quitStatus.equals("N")||quitStatus.equals("Q")){
+            //starts the game if user wanted a new game, and not just quit
+            if (quitStatus.equals("N")){
                 startgame = "Y";
             }
+
+            //Asks users to restart the game, if user quit, or game ended naturally in a win/loss
             else startgame = MainMenu.restartGame();
         }
     }
