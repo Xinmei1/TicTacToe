@@ -37,6 +37,7 @@ public class Main {
                 //checks player has not quit, and updates loop conditions
                 quitStatus = PlayerOneInput.inputGetter();
 
+                //<editor-fold desc="Checks win condition">
                 //checks if object PlayerGrid's field variables have met it's wincondition method
                 if (PlayerGrid.returnsWin()) {
 
@@ -50,7 +51,7 @@ public class Main {
 
                     i = 999;
                 }
-                i++;
+                //</editor-fold>
             }
 
             //starts the game if user wanted a new game, and not just quit

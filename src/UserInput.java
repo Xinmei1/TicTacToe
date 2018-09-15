@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class UserInput {
 
+    //region Region folding to hide field variables
     //declaration of field variables, for the Tic-Tac-Toe game
     private String _firstInput;
     private String _secondInput;
     private String _thirdInput;
+    //endregion
 
     //initializing field variables values inside constructor
     public UserInput() {
