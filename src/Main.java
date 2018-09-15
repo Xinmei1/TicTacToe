@@ -22,7 +22,7 @@ public class Main {
             int i = 0;
 
             //keeps going while you have not won, or NOT quit
-            while (i < 999 && !(quitStatus.equals("Q"))) {
+            while (i < 999 && !((quitStatus.equals("Q")||(quitStatus.equals("N"))))) {
 
                 //Header with menu options
                 MainMenu.helloScreen();
@@ -52,7 +52,11 @@ public class Main {
                 }
                 i++;
             }
-            startgame = MainMenu.restartGame();
+
+            if (quitStatus.equals("N")||quitStatus.equals("Q")){
+                startgame = "Y";
+            }
+            else startgame = MainMenu.restartGame();
         }
     }
 }

@@ -20,11 +20,19 @@ public class UserInput {
         _firstInput = scanner.nextLine().toUpperCase();
 
         //breaks out of loop if user types in Q, which is the status for quit playing
-        if (_firstInput.equals("Q")){
-            System.out.println("You just quit the game");
-            //clears secondinut and thirdinput so the getter returns only "Q"
+        if (_firstInput.equals("Q")||_firstInput.equals("N")){
+
+            if (_firstInput.equals("Q")) {
+                System.out.println("You just quit the game");
+            }
+            else if (_firstInput.equals("N")){
+                System.out.println("You just started a new game");
+            }
+            //clears second input and third input so the getter returns only "Q"
             _secondInput="";
             _thirdInput="";
+
+            //returns out of the method. do not use break, that only breaks out of the loop
             return;
         }
         System.out.println("Row 1 2 or 3?");
