@@ -88,8 +88,16 @@ public class MyGrid {
                 else { // First Column
                     if (_r1c1.equals(_r2c1) && _r1c1.equals(_r3c1))
                         return true;
-                    else {
-                        return false;
+                    else { // Second Column
+                        if (_r1c2.equals(_r2c2) && _r2c2.equals(_r3c2))
+                            return true;
+                        else{ // Third Column
+                            if(_r1c3.equals(_r2c3) && _r1c3.equals(_r3c3))
+                                return true;
+                            else {
+                                return false;
+                            }
+                        }
                     }
                 }
             }

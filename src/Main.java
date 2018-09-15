@@ -9,7 +9,7 @@ public class Main {
         //Starting Tic-Tac-Toe game
         while (startgame.equals("Y")) {
 
-            //Initializes quitgame to be not quit
+            //Initializes quit game to be not quit
             String quitStatus = "NQ";
 
             //Generates a new object from the UserInput class, resets user input
@@ -57,7 +57,6 @@ public class Main {
             if (quitStatus.equals("N")){
                 startgame = "Y";
             }
-
             //Asks users to restart the game, if user quit, or game ended naturally in a win/loss
             else startgame = MainMenu.restartGame();
         }
