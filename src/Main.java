@@ -9,6 +9,9 @@ public class Main {
         //Starting Tic-Tac-Toe game
         while (startgame.equals("Y")) {
 
+            //Initializes quitgame to be not quit
+            String quitStatus = "NQ";
+
             //Generates a new object from the UserInput class, resets user input
             UserInput PlayerOneInput = new UserInput();
 
@@ -17,7 +20,9 @@ public class Main {
 
             //loop for playing TicTacToe
             int i = 0;
-            while (i < 999) {
+
+            //keeps going while you have not won, or NOT quit
+            while (i < 999 && !(quitStatus.equals("Q"))) {
 
                 //Header with menu options
                 MainMenu.helloScreen();
@@ -29,6 +34,8 @@ public class Main {
                 PlayerOneInput.inputSetter();
                 //change board state using user input
                 PlayerGrid.setGrid(PlayerOneInput.inputGetter());
+                //checks player has not quit
+                quitStatus = PlayerOneInput.inputGetter();
 
                 //checks game over
                 if (PlayerGrid.returnsWin()) {
