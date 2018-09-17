@@ -6,16 +6,17 @@ public class TicTacToe {
 
         //Prompt for starting Tic-Tac-Toe game
         String startGame = MainMenu.newGame();
+        String xOrO = "";
 
         //Starting Tic-Tac-Toe game
         while (startGame.equals("Y")) {
 
             System.out.println("\nNew Tic-Tac-Toe Game Started");
 
-            System.out.println("How many rows?");
+            System.out.println("Setup: How many rows in this grid?");
             Scanner scanner = new Scanner(System.in);
             int rows = scanner.nextInt();
-            System.out.println("How many columns?");
+            System.out.println("Setup: How many columns in this grid?");
             int columns = scanner.nextInt();
 
             //Generates a new object from the MyGrid class, resets grid
@@ -29,7 +30,7 @@ public class TicTacToe {
             int i = 0;
 
             //keeps going while you have not won, or NOT quit
-            while (i < 999 ) {
+            while (i < 999) {
 
                 //Generic Header with menu options
 
@@ -38,13 +39,12 @@ public class TicTacToe {
                 Scanner scanner1 = new Scanner(System.in);
 
                 System.out.println("X or O?");
-                String xOrO = scanner1.nextLine().toUpperCase();
+                xOrO = scanner1.nextLine().toUpperCase();
 
                 if (xOrO.equals("Q")) {
                     break;
                 }
-                if (xOrO.equals("N")){
-                    startGame = "Y";
+                if (xOrO.equals("N")) {
                     break;
                 }
 
@@ -73,9 +73,9 @@ public class TicTacToe {
                 }
             }
 
-            //Asks users to restart the game, if user quit, or game ended naturally in a win/loss
-            if (!startGame.equals("Y")){
-            startGame = MainMenu.restartGame();
+            //if User chose to Quit, then give them the choice to restart the game or end program
+            if (xOrO.equals("Q")) {
+                startGame = MainMenu.restartGame();
 
             }
         }

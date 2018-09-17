@@ -17,7 +17,7 @@ public class MyGrid {
 
         for (int c = 0; c < _columns; c++) {
             for (int r = 0; r < _rows; r++) {
-                ticTacToeGrid[c][r] = " ";
+                ticTacToeGrid[c][r] = "_";
             }
         }
     }
@@ -29,9 +29,9 @@ public class MyGrid {
     public void getGrid() {
         for (int r = 0; r < _rows; r++) {
             for (int c = 0; c < _columns; c++) {
-                System.out.print(ticTacToeGrid[c][r] + "|");
+                System.out.print("|" + ticTacToeGrid[c][r]);
             }
-            System.out.print("\n");
+            System.out.print("|\n");
         }
     }
 
