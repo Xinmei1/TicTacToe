@@ -38,7 +38,7 @@ public class MyGrid {
 
         for (int j = 0; j < ticTacToeGrid.length - 1; j++) {
 
-            //counter to check "in a row"
+            //counter to check "in a column"
             int counter = 0;
 
             for (int i = 0; i < ticTacToeGrid.length - 1; i++) {
@@ -60,8 +60,51 @@ public class MyGrid {
             }
         }
 
-        return false;
+        for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
 
+            //counter to check "in a row"
+            int counter2 = 0;
+
+            for (int inner = 0; inner < ticTacToeGrid.length - 1; inner++) {
+
+                if (!ticTacToeGrid[inner][outer].equals("_")) {
+
+                    //keeps looping till the entire length of the Array
+                    if (ticTacToeGrid[inner][outer].equals(ticTacToeGrid[inner+1][outer])) {
+
+                        //increments whenever the Strings match
+                        counter2++;
+
+                        //if it matches as many times as it loops, that's "in a row"
+                        if (counter2 == ticTacToeGrid.length - 1) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        int counter3 = 0;
+        for (int diag = 0 ; diag < ticTacToeGrid.length-1; diag ++){
+
+            if (!ticTacToeGrid[diag][diag].equals("_")) {
+
+                //checks diagonal
+                //keeps looping till the entire length of the Array
+                if (ticTacToeGrid[diag][diag].equals(ticTacToeGrid[diag+1][diag+1])) {
+
+                    //increments whenever the Strings match
+                    counter3++;
+
+                    //if it matches as many times as it loops, that's "in a column"
+                    if (counter3 == ticTacToeGrid.length - 1 || counter3 > ticTacToeGrid.length - 1) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     //Prints a generic String from a static method
