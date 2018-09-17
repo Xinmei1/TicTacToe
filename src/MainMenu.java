@@ -5,9 +5,10 @@ public class MainMenu {
     //MainMenu is static and is always the same, to be as generic as possible
 
     public static String newGame() {
-        System.out.println("\n\nTO HERE\nCommand Line Application\n" +
-                "Tic-Tac-Toe\n\n\n\n\n\nExpand up till \"TO HERE\" \n" +
-                "\nStart New Game?\n(Y)es /(N)o");
+        System.out.println("Command Line Application\n" +
+                "Tic-Tac-Toe\n" +
+                "\nStart New Game?" +
+                "\n(Y)es / (N)o");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toUpperCase();
     }
