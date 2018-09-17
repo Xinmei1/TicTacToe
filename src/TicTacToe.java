@@ -38,7 +38,7 @@ public class TicTacToe {
 
                 Scanner scanner1 = new Scanner(System.in);
 
-                System.out.println("X or O?");
+                System.out.println("X or O? or (N)/(Q)");
                 xOrO = scanner1.nextLine().toUpperCase();
 
                 if (xOrO.equals("Q")) {
@@ -57,6 +57,8 @@ public class TicTacToe {
                 PlayerGrid.setUserInput(userColumn - 1, userRow - 1, xOrO);
 
                 PlayerGrid.getGrid();
+
+                PlayerGrid.returnsWin();
 
                 //checks if object PlayerGrid's field variables have met it's winCondition method
                 if (PlayerGrid.returnsWin()) {
