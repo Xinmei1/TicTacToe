@@ -63,11 +63,6 @@ public class TicTacToe {
                 //checks if object PlayerGrid's field variables have met it's winCondition method
                 if (PlayerGrid.returnsWin()) {
 
-                    //Generic Header with menu options
-                    MainMenu.helloScreen();
-                    //PlayerGrid object's print of it's current field variables, which is the game board
-                    PlayerGrid.getGrid();
-
                     //static game over message from MyGrid class, not an instantiated object
                     MyGrid.printWin();
 

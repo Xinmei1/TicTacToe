@@ -35,10 +35,28 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-        for (int i = 0; i < _rows + 1; i++) {
 
-            if (!ticTacToeGrid[0][i].equals("_")) {
-                return (ticTacToeGrid[0][i].equals(ticTacToeGrid[0][i + 1]));
+        for (int j = 0; j < ticTacToeGrid.length - 1; j++) {
+
+            //counter to check "in a row"
+            int counter = 0;
+
+            for (int i = 0; i < ticTacToeGrid.length - 1; i++) {
+
+                if (!ticTacToeGrid[j][i].equals("_")) {
+
+                    //keeps looping till the entire length of the Array
+                    if (ticTacToeGrid[j][i].equals(ticTacToeGrid[j][i + 1])) {
+
+                        //increments whenever the Strings match
+                        counter++;
+
+                        //if it matches as many times as it loops, that's "in a column"
+                        if (counter == ticTacToeGrid.length - 1) {
+                            return true;
+                        }
+                    }
+                }
             }
         }
 
