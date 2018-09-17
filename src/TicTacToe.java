@@ -10,6 +10,8 @@ public class TicTacToe {
         //Starting Tic-Tac-Toe game
         while (startGame.equals("Y")) {
 
+            System.out.println("\nNew Tic-Tac-Toe Game Started");
+
             System.out.println("How many rows?");
             Scanner scanner = new Scanner(System.in);
             int rows = scanner.nextInt();
@@ -43,13 +45,16 @@ public class TicTacToe {
                 if (xOrO.equals("Q")) {
                     break;
                 }
+                if (xOrO.equals("N")){
+                    quitStatus = "N";
+                    break;
+                }
 
                 System.out.println("Which row?");
                 int userRow = scanner1.nextInt();
 
                 System.out.println("Which column?");
                 int userColumn = scanner1.nextInt();
-
 
                 PlayerGrid.setUserInput(userColumn - 1, userRow - 1, xOrO);
 
@@ -68,14 +73,11 @@ public class TicTacToe {
 
                     i = 999;
                 }
-
             }
-
             //starts the game if user wanted a new game, and not just quit
             if (quitStatus.equals("N")) {
                 startGame = "Y";
             }
-
             //Asks users to restart the game, if user quit, or game ended naturally in a win/loss
             else startGame = MainMenu.restartGame();
         }

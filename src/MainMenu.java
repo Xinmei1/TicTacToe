@@ -5,7 +5,7 @@ public class MainMenu {
     //MainMenu is static and is always the same, to be as generic as possible
 
     public static String newGame() {
-        System.out.println("Command Line Application\n" +
+        System.out.println("\nCommand Line Application\n" +
                 "Tic-Tac-Toe\n" +
                 "\nStart New Game?" +
                 "\n(Y)es / (N)o");
@@ -20,7 +20,7 @@ public class MainMenu {
     }
 
     public static void helloScreen() {
-        System.out.println("\n\n====================" +
+        System.out.println("====================" +
                 "\n" + "Tic-Tac-Toe \n(N)ew game (Q)uit\n" +
                 "====================");
     }
