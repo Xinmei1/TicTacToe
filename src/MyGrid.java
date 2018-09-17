@@ -28,13 +28,17 @@ public class MyGrid {
     }
 
     public void getGrid() {
-        for (int i = 0; i < _rows; i++) {
-            System.out.println(Arrays.toString(ticTacToeGrid[i]));
+        for (int r = 0 ; r < _rows; r++) {
+            for (int c = 0; c < _columns; c++) {
+                System.out.print(ticTacToeGrid[c][r]+"|");
+            }
+            System.out.println("\n");
         }
     }
 
     public boolean returnsWin() {
-        return true;
+
+        return false;
     }
 
     //Prints a generic String from a static method

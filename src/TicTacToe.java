@@ -32,18 +32,21 @@ public class TicTacToe {
             while (i < 999 && !((quitStatus.equals("Q")||(quitStatus.equals("N"))))) {
 
                 //Generic Header with menu options
+
                 MainMenu.helloScreen();
 
+                Scanner scanner1 = new Scanner(System.in);
+
                 System.out.println("X or O?");
-                String xOrO = scanner.nextLine();
+                String xOrO = scanner1.nextLine();
 
                 System.out.println("Which column?");
-                int userColumn = scanner.nextInt();
+                int userColumn = scanner1.nextInt();
 
                 System.out.println("Which row?");
-                int userRow = scanner.nextInt();
+                int userRow = scanner1.nextInt();
 
-                PlayerGrid.setUserInput(userColumn,userRow,xOrO);
+                PlayerGrid.setUserInput(userColumn-1,userRow-1,xOrO);
 
                 PlayerGrid.getGrid();
 
