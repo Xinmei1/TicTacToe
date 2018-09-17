@@ -27,11 +27,9 @@ public class TicTacToe {
 
             //loop for playing TicTacToe
             int i = 0;
-            //Initializes quit game to be not quit
-            String quitStatus = "NQ";
 
             //keeps going while you have not won, or NOT quit
-            while (i < 999 && !((quitStatus.equals("Q") || (quitStatus.equals("N"))))) {
+            while (i < 999 ) {
 
                 //Generic Header with menu options
 
@@ -46,7 +44,7 @@ public class TicTacToe {
                     break;
                 }
                 if (xOrO.equals("N")){
-                    quitStatus = "N";
+                    startGame = "Y";
                     break;
                 }
 
@@ -74,12 +72,12 @@ public class TicTacToe {
                     i = 999;
                 }
             }
-            //starts the game if user wanted a new game, and not just quit
-            if (quitStatus.equals("N")) {
-                startGame = "Y";
-            }
+
             //Asks users to restart the game, if user quit, or game ended naturally in a win/loss
-            else startGame = MainMenu.restartGame();
+            if (!startGame.equals("Y")){
+            startGame = MainMenu.restartGame();
+
+            }
         }
     }
 }
