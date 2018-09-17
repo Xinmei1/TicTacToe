@@ -9,17 +9,16 @@ public class Main {
         //Starting Tic-Tac-Toe game
         while (startgame.equals("Y")) {
 
-            //Initializes quit game to be not quit
-            String quitStatus = "NQ";
-
             //Generates a new object from the UserInput class, resets user input
-            UserInput PlayerOneInput = new UserInput();
+            UserInput UserInputObject = new UserInput();
 
             //Generates a new object from the MyGrid class, resets grid
             MyGrid PlayerGrid = new MyGrid();
 
             //loop for playing TicTacToe
             int i = 0;
+            //Initializes quit game to be not quit
+            String quitStatus = "NQ";
 
             //keeps going while you have not won, or NOT quit
             while (i < 999 && !((quitStatus.equals("Q")||(quitStatus.equals("N"))))) {
@@ -28,14 +27,14 @@ public class Main {
                 MainMenu.helloScreen();
 
                 //load board state of the object PlayerGrid
-                PlayerGrid.printGrid();
+                PlayerGrid.getGrid();
 
                 //sets input of the object PlayerOneInput
-                PlayerOneInput.inputSetter();
+                UserInputObject.inputSetter();
                 //change Object PlayerGrid's (board state)/(field variables) using user input
-                PlayerGrid.setGrid(PlayerOneInput.inputGetter());
+                PlayerGrid.setGrid(UserInputObject.inputGetter());
                 //checks player has not quit, and updates loop conditions
-                quitStatus = PlayerOneInput.inputGetter();
+                quitStatus = UserInputObject.inputGetter();
 
                 //<editor-fold desc="Checks win condition">
                 //checks if object PlayerGrid's field variables have met it's wincondition method
@@ -44,7 +43,7 @@ public class Main {
                     //Generic Header with menu options
                     MainMenu.helloScreen();
                     //PlayerGrid object's print of it's current field variables, which is the game board
-                    PlayerGrid.printGrid();
+                    PlayerGrid.getGrid();
 
                     //static game over message from MyGrid class, not an instantiated object
                     MyGrid.printWin();
