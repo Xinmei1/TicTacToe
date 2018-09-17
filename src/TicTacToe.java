@@ -17,7 +17,7 @@ public class TicTacToe {
             int columns = scanner.nextInt();
 
             //Generates a new object from the MyGrid class, resets grid
-            MyGrid PlayerGrid = new MyGrid(columns,rows);
+            MyGrid PlayerGrid = new MyGrid(columns, rows);
             //initializes the Array's elements with spaces
             PlayerGrid.setGrid();
             //load board state of the object PlayerGrid
@@ -29,7 +29,7 @@ public class TicTacToe {
             String quitStatus = "NQ";
 
             //keeps going while you have not won, or NOT quit
-            while (i < 999 && !((quitStatus.equals("Q")||(quitStatus.equals("N"))))) {
+            while (i < 999 && !((quitStatus.equals("Q") || (quitStatus.equals("N"))))) {
 
                 //Generic Header with menu options
 
@@ -38,15 +38,20 @@ public class TicTacToe {
                 Scanner scanner1 = new Scanner(System.in);
 
                 System.out.println("X or O?");
-                String xOrO = scanner1.nextLine();
+                String xOrO = scanner1.nextLine().toUpperCase();
 
-                System.out.println("Which column?");
-                int userColumn = scanner1.nextInt();
+                if (xOrO.equals("Q")) {
+                    break;
+                }
 
                 System.out.println("Which row?");
                 int userRow = scanner1.nextInt();
 
-                PlayerGrid.setUserInput(userColumn-1,userRow-1,xOrO);
+                System.out.println("Which column?");
+                int userColumn = scanner1.nextInt();
+
+
+                PlayerGrid.setUserInput(userColumn - 1, userRow - 1, xOrO);
 
                 PlayerGrid.getGrid();
 
@@ -63,10 +68,11 @@ public class TicTacToe {
 
                     i = 999;
                 }
+
             }
 
             //starts the game if user wanted a new game, and not just quit
-            if (quitStatus.equals("N")){
+            if (quitStatus.equals("N")) {
                 startGame = "Y";
             }
 

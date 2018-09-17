@@ -1,9 +1,8 @@
-import java.util.Arrays;
 
 public class MyGrid {
 
     private int _columns;
-    private int _rows ;
+    private int _rows;
     private String[][] ticTacToeGrid;
 
     //MyGrid constructor
@@ -23,16 +22,16 @@ public class MyGrid {
         }
     }
 
-    public void setUserInput(int column, int row, String xOrO){
+    public void setUserInput(int column, int row, String xOrO) {
         ticTacToeGrid[column][row] = xOrO;
     }
 
     public void getGrid() {
-        for (int r = 0 ; r < _rows; r++) {
+        for (int r = 0; r < _rows; r++) {
             for (int c = 0; c < _columns; c++) {
-                System.out.print(ticTacToeGrid[c][r]+"|");
+                System.out.print(ticTacToeGrid[c][r] + "|");
             }
-            System.out.println("\n");
+            System.out.print("\n");
         }
     }
 
