@@ -1,19 +1,23 @@
+import java.util.Scanner;
 
-public class Main {
+public class TicTacToe {
 
     public static void main(String[] args) {
 
         //Prompt for starting Tic-Tac-Toe game
-        String startgame = MainMenu.newGame();
+        String startGame = MainMenu.newGame();
 
         //Starting Tic-Tac-Toe game
-        while (startgame.equals("Y")) {
+        while (startGame.equals("Y")) {
 
-            //Generates a new object from the UserInput class, resets user input
-            UserInput UserInputObject = new UserInput();
+            System.out.println("How many rows?");
+            Scanner scanner = new Scanner(System.in);
+            int rows = scanner.nextInt();
+            System.out.println("How many columns?");
+            int columns = scanner.nextInt();
 
             //Generates a new object from the MyGrid class, resets grid
-            MyGrid PlayerGrid = new MyGrid();
+            MyGrid PlayerGrid = new MyGrid(columns,rows);
 
             //loop for playing TicTacToe
             int i = 0;
@@ -26,15 +30,9 @@ public class Main {
                 //Generic Header with menu options
                 MainMenu.helloScreen();
 
+                PlayerGrid.setGrid();
                 //load board state of the object PlayerGrid
                 PlayerGrid.getGrid();
-
-                //sets input of the object PlayerOneInput
-                UserInputObject.inputSetter();
-                //change Object PlayerGrid's (board state)/(field variables) using user input
-                PlayerGrid.setGrid(UserInputObject.inputGetter());
-                //checks player has not quit, and updates loop conditions
-                quitStatus = UserInputObject.inputGetter();
 
                 //checks if object PlayerGrid's field variables have met it's winCondition method
                 if (PlayerGrid.returnsWin()) {
@@ -42,7 +40,7 @@ public class Main {
                     //Generic Header with menu options
                     MainMenu.helloScreen();
                     //PlayerGrid object's print of it's current field variables, which is the game board
-                    PlayerGrid.getGrid();
+            //        PlayerGrid.getGrid();
 
                     //static game over message from MyGrid class, not an instantiated object
                     MyGrid.printWin();
@@ -53,10 +51,11 @@ public class Main {
 
             //starts the game if user wanted a new game, and not just quit
             if (quitStatus.equals("N")){
-                startgame = "Y";
+                startGame = "Y";
             }
+
             //Asks users to restart the game, if user quit, or game ended naturally in a win/loss
-            else startgame = MainMenu.restartGame();
+            else startGame = MainMenu.restartGame();
         }
     }
 }
