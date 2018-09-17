@@ -20,7 +20,7 @@ public class MainMenu {
     }
 
     public static void helloScreen() {
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n====================" +
+        System.out.println("\n\n====================" +
                 "\n" + "Tic-Tac-Toe \n(N)ew game (Q)uit\n" +
                 "====================");
     }

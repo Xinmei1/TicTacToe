@@ -18,6 +18,10 @@ public class TicTacToe {
 
             //Generates a new object from the MyGrid class, resets grid
             MyGrid PlayerGrid = new MyGrid(columns,rows);
+            //initializes the Array's elements with spaces
+            PlayerGrid.setGrid();
+            //load board state of the object PlayerGrid
+            PlayerGrid.getGrid();
 
             //loop for playing TicTacToe
             int i = 0;
@@ -30,8 +34,17 @@ public class TicTacToe {
                 //Generic Header with menu options
                 MainMenu.helloScreen();
 
-                PlayerGrid.setGrid();
-                //load board state of the object PlayerGrid
+                System.out.println("X or O?");
+                String xOrO = scanner.nextLine();
+
+                System.out.println("Which column?");
+                int userColumn = scanner.nextInt();
+
+                System.out.println("Which row?");
+                int userRow = scanner.nextInt();
+
+                PlayerGrid.setUserInput(userColumn,userRow,xOrO);
+
                 PlayerGrid.getGrid();
 
                 //checks if object PlayerGrid's field variables have met it's winCondition method
@@ -40,7 +53,7 @@ public class TicTacToe {
                     //Generic Header with menu options
                     MainMenu.helloScreen();
                     //PlayerGrid object's print of it's current field variables, which is the game board
-            //        PlayerGrid.getGrid();
+                    PlayerGrid.getGrid();
 
                     //static game over message from MyGrid class, not an instantiated object
                     MyGrid.printWin();
