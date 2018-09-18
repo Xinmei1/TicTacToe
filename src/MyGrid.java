@@ -45,12 +45,12 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-        for (int j = 0; j < ticTacToeGrid.length - 1; j++) {
+        for (int j = 0; j < ticTacToeGrid[0].length - 1; j++) {
 
             //winCheckCounter to check "in a column"
             int inAColumnCounter = 0;
 
-            for (int i = 0; i < ticTacToeGrid.length - 1; i++) {
+            for (int i = 0; i < ticTacToeGrid[0].length - 1; i++) {
 
                 if (!ticTacToeGrid[j][i].equals("_")) {
 
@@ -61,7 +61,7 @@ public class MyGrid {
                         inAColumnCounter++;
 
                         //if it matches as many times as it loops, that's "in a column"
-                        if (inAColumnCounter == ticTacToeGrid.length - 1) {
+                        if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
                             return true;
                         }
                     }
