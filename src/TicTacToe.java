@@ -67,13 +67,13 @@ public class TicTacToe {
                     MyGrid.printWin();
 
                     i = 999;
+                    startGame = MainMenu.restartGame();
                 }
             }
 
             //if User chose to Quit, then give them the choice to restart the game or end program
             if (xOrO.equals("Q")) {
                 startGame = MainMenu.restartGame();
-
             }
         }
     }

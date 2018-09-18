@@ -130,12 +130,12 @@ public class MyGrid {
             }
         }
 
-
         return false;
     }
 
     //Prints a generic String from a static method
     public static void printWin() {
+
         System.out.println("GAME OVER, SOMEBODY WON!");
 
     }
