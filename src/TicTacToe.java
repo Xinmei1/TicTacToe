@@ -64,7 +64,7 @@ public class TicTacToe {
                 if (PlayerGrid.returnsWin()) {
 
                     //static game over message from MyGrid class, not an instantiated object
-                    MyGrid.printWin();
+                    PlayerGrid.printWin();
 
                     i = 999;
                     startGame = MainMenu.restartGame();

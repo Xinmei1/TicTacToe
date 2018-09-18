@@ -4,6 +4,7 @@ public class MyGrid {
     private int _columns;
     private int _rows;
     private String[][] ticTacToeGrid;
+    private String _lastInput;
 
     //MyGrid constructor
     public MyGrid(int columns, int rows) {
@@ -22,6 +23,7 @@ public class MyGrid {
 
     public void setUserInput(int column, int row, String xOrO) {
         ticTacToeGrid[column][row] = xOrO;
+        _lastInput = xOrO;
     }
 
     public void getGrid() {
@@ -133,10 +135,9 @@ public class MyGrid {
         return false;
     }
 
-    //Prints a generic String from a static method
-    public static void printWin() {
+    public void printWin() {
 
-        System.out.println("GAME OVER, SOMEBODY WON!");
+        System.out.println("GAME OVER, "+ _lastInput +" WON!\n");
 
     }
 }
