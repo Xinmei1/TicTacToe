@@ -94,7 +94,7 @@ public class MyGrid {
         }
 
         int DiagonalInARowCounter_bk = 0;
-        for (int diag = 0; diag < ticTacToeGrid.length - 1; diag++) {
+        for (int diag = 0; diag < ticTacToeGrid[0].length - 1; diag++) {
 
             if (!ticTacToeGrid[diag][diag].equals("_")) {
 
@@ -106,7 +106,7 @@ public class MyGrid {
                     DiagonalInARowCounter_bk++;
 
                     //if it matches as many times as it loops, that's "diagonal"
-                    if (DiagonalInARowCounter_bk == ticTacToeGrid.length - 1 || DiagonalInARowCounter_bk > ticTacToeGrid.length - 1) {
+                    if (DiagonalInARowCounter_bk == ticTacToeGrid[0].length - 1 || DiagonalInARowCounter_bk > ticTacToeGrid[0].length - 1) {
                         return true;
                     }
                 }
@@ -116,7 +116,7 @@ public class MyGrid {
         int DiagonalInARowCounter_fd = 0;
         int rowIncrement = 0;
 
-        for (int columnDecrement = ticTacToeGrid.length - 1; columnDecrement > 0; --columnDecrement) {
+        for (int columnDecrement = ticTacToeGrid[0].length - 1; columnDecrement > 0; --columnDecrement) {
 
             if (!ticTacToeGrid[columnDecrement][rowIncrement].equals("_")) {
 
@@ -128,7 +128,7 @@ public class MyGrid {
                     DiagonalInARowCounter_fd++;
 
                     //if it matches as many times as it loops, that's "backwards diagonal"
-                    if (DiagonalInARowCounter_fd == ticTacToeGrid.length - 1 || DiagonalInARowCounter_fd > ticTacToeGrid.length - 1) {
+                    if (DiagonalInARowCounter_fd == ticTacToeGrid[0].length - 1 || DiagonalInARowCounter_fd > ticTacToeGrid[0].length - 1) {
                         return true;
                     }
                 }
