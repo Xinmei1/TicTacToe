@@ -37,11 +37,10 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-
         for (int j = 0; j < ticTacToeGrid.length - 1; j++) {
 
             //winCheckCounter to check "in a column"
-            int counter = 0;
+            int inAColumnCounter = 0;
 
             for (int i = 0; i < ticTacToeGrid.length - 1; i++) {
 
@@ -51,21 +50,22 @@ public class MyGrid {
                     if (ticTacToeGrid[j][i].equals(ticTacToeGrid[j][i + 1])) {
 
                         //increments whenever the Strings match
-                        counter++;
+                        inAColumnCounter++;
 
                         //if it matches as many times as it loops, that's "in a column"
-                        if (counter == ticTacToeGrid.length - 1) {
+                        if (inAColumnCounter == ticTacToeGrid.length - 1) {
                             return true;
                         }
                     }
                 }
             }
+
         }
 
         for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
 
             //winCheckCounter to check "in a row"
-            int counter = 0;
+            int inARowCounter = 0;
 
             for (int inner = 0; inner < ticTacToeGrid.length - 1; inner++) {
 
@@ -75,10 +75,10 @@ public class MyGrid {
                     if (ticTacToeGrid[inner][outer].equals(ticTacToeGrid[inner + 1][outer])) {
 
                         //increments whenever the Strings match
-                        counter++;
+                        inARowCounter++;
 
                         //if it matches as many times as it loops, that's "in a row"
-                        if (counter == ticTacToeGrid.length - 1) {
+                        if (inARowCounter == ticTacToeGrid.length - 1) {
                             return true;
                         }
                     }
@@ -86,8 +86,9 @@ public class MyGrid {
             }
         }
 
-        int winCheckCounter = 0;
+        int DiagonalInARowCounter_bk = 0;
         for (int diag = 0; diag < ticTacToeGrid.length - 1; diag++) {
+
 
             if (!ticTacToeGrid[diag][diag].equals("_")) {
 
@@ -96,21 +97,21 @@ public class MyGrid {
                 if (ticTacToeGrid[diag][diag].equals(ticTacToeGrid[diag + 1][diag + 1])) {
 
                     //increments whenever the Strings match
-                    winCheckCounter++;
+                    DiagonalInARowCounter_bk++;
 
                     //if it matches as many times as it loops, that's "diagonal"
-                    if (winCheckCounter == ticTacToeGrid.length - 1 || winCheckCounter > ticTacToeGrid.length - 1) {
+                    if (DiagonalInARowCounter_bk == ticTacToeGrid.length - 1 || DiagonalInARowCounter_bk > ticTacToeGrid.length - 1) {
                         return true;
                     }
                 }
             }
+
         }
 
-        winCheckCounter = 0;
+        int DiagonalInARowCounter_fd = 0;
         int rowIncrement = 0;
 
         for (int columnDecrement = ticTacToeGrid.length - 1; columnDecrement > 0; --columnDecrement) {
-
 
             if (!ticTacToeGrid[columnDecrement][rowIncrement].equals("_")) {
 
@@ -119,10 +120,10 @@ public class MyGrid {
                 if (ticTacToeGrid[columnDecrement][rowIncrement].equals(ticTacToeGrid[columnDecrement - 1][rowIncrement + 1])) {
 
                     //increments whenever the Strings match
-                    winCheckCounter++;
+                    DiagonalInARowCounter_fd++;
 
                     //if it matches as many times as it loops, that's "backwards diagonal"
-                    if (winCheckCounter == ticTacToeGrid.length - 1 || winCheckCounter > ticTacToeGrid.length - 1) {
+                    if (DiagonalInARowCounter_fd == ticTacToeGrid.length - 1 || DiagonalInARowCounter_fd > ticTacToeGrid.length - 1) {
                         return true;
                     }
                 }
@@ -135,7 +136,7 @@ public class MyGrid {
 
     public void printWin() {
 
-        System.out.println("GAME OVER, "+ _lastInput +" WON!\n");
+        System.out.println("GAME OVER, " + _lastInput + " WON!\n");
 
     }
 }
