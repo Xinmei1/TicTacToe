@@ -70,7 +70,7 @@ public class MyGrid {
                 if (!ticTacToeGrid[inner][outer].equals("_")) {
 
                     //keeps looping till the entire length of the Array
-                    if (ticTacToeGrid[inner][outer].equals(ticTacToeGrid[inner+1][outer])) {
+                    if (ticTacToeGrid[inner][outer].equals(ticTacToeGrid[inner + 1][outer])) {
 
                         //increments whenever the Strings match
                         counter2++;
@@ -85,24 +85,51 @@ public class MyGrid {
         }
 
         int counter3 = 0;
-        for (int diag = 0 ; diag < ticTacToeGrid.length-1; diag ++){
+        for (int diag = 0; diag < ticTacToeGrid.length - 1; diag++) {
 
             if (!ticTacToeGrid[diag][diag].equals("_")) {
 
                 //checks diagonal
                 //keeps looping till the entire length of the Array
-                if (ticTacToeGrid[diag][diag].equals(ticTacToeGrid[diag+1][diag+1])) {
+                if (ticTacToeGrid[diag][diag].equals(ticTacToeGrid[diag + 1][diag + 1])) {
 
                     //increments whenever the Strings match
                     counter3++;
 
-                    //if it matches as many times as it loops, that's "in a column"
+                    //if it matches as many times as it loops, that's "diagonal"
                     if (counter3 == ticTacToeGrid.length - 1 || counter3 > ticTacToeGrid.length - 1) {
                         return true;
                     }
                 }
             }
         }
+
+        int counter4 = 0;
+        int someCounter = 0;
+
+        for (int backwardsdiag = ticTacToeGrid.length - 1; backwardsdiag > 0; --backwardsdiag) {
+
+
+            if (!ticTacToeGrid[backwardsdiag][someCounter].equals("_")) {
+
+                //checks backwards diagonal
+                //keeps looping backwards from entire length of the Array to 0
+
+
+                if (ticTacToeGrid[backwardsdiag][someCounter].equals(ticTacToeGrid[backwardsdiag - 1][someCounter + 1])) {
+
+                    //increments whenever the Strings match
+                    counter4++;
+
+                    //if it matches as many times as it loops, that's "backwards diagonal"
+                    if (counter4 == ticTacToeGrid.length - 1 || counter4 > ticTacToeGrid.length - 1) {
+                        return true;
+                    }
+                }
+                someCounter++;
+            }
+        }
+
 
         return false;
     }
