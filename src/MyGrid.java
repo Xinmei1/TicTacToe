@@ -4,6 +4,8 @@ public class MyGrid {
     private int _columns;
     private int _rows;
     private String[][] ticTacToeGrid;
+
+    //_lastInput used to tell who won
     private String _lastInput;
 
     //MyGrid constructor
@@ -59,7 +61,6 @@ public class MyGrid {
                     }
                 }
             }
-
         }
 
         for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
@@ -88,7 +89,6 @@ public class MyGrid {
 
         int DiagonalInARowCounter_bk = 0;
         for (int diag = 0; diag < ticTacToeGrid.length - 1; diag++) {
-
 
             if (!ticTacToeGrid[diag][diag].equals("_")) {
 
