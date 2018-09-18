@@ -53,7 +53,13 @@ public class TicTacToe {
                 System.out.println("Which column?");
                 int userColumn = scanner1.nextInt();
 
-                PlayerGrid.setUserInput(userColumn - 1, userRow - 1, xOrO);
+                try {
+                    PlayerGrid.setUserInput(userColumn - 1, userRow - 1, xOrO);
+                }
+                //Won't let user enter a spot already filled
+                catch(IllegalArgumentException ex){
+                    System.out.println(ex.getMessage());
+                }
 
                 PlayerGrid.getGrid();
 

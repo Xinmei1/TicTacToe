@@ -24,8 +24,12 @@ public class MyGrid {
     }
 
     public void setUserInput(int column, int row, String xOrO) {
-        ticTacToeGrid[column][row] = xOrO;
-        _lastInput = xOrO;
+        if (ticTacToeGrid[column][row].equals("O")||ticTacToeGrid[column][row].equals("X"))
+        {
+            throw new IllegalArgumentException("That spot is already taken! Try again!");
+        }
+            ticTacToeGrid[column][row] = xOrO;
+            _lastInput = xOrO;
     }
 
     public void getGrid() {
