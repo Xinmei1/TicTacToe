@@ -11,9 +11,8 @@ public class TicTacToe {
         //Starting Tic-Tac-Toe game
         while (startGame.equals("Y")) {
 
-            System.out.println("\nNew Tic-Tac-Toe Game Started");
-
-            System.out.println("Setup: How many rows in this grid?");
+            System.out.println("\nNew Tic-Tac-Toe Game Started\n" +
+                    "Setup: How many rows in this grid?");
             Scanner scanner = new Scanner(System.in);
             int rows = scanner.nextInt();
             System.out.println("Setup: How many columns in this grid?");
@@ -27,10 +26,10 @@ public class TicTacToe {
             PlayerGrid.getGrid();
 
             //loop for playing TicTacToe
-            int i = 0;
+            boolean play = true;
 
-            //keeps going while you have not won, or NOT quit
-            while (i < 999) {
+            //Loops unless Game Over, or User presses N or Q
+            while (play) {
 
                 //Generic Header with menu options
 
@@ -66,7 +65,7 @@ public class TicTacToe {
                     //static game over message from MyGrid class, not an instantiated object
                     PlayerGrid.printWin();
 
-                    i = 999;
+                    play = false;
                     startGame = MainMenu.restartGame();
                 }
             }
