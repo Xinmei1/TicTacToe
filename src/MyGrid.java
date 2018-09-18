@@ -30,6 +30,9 @@ public class MyGrid {
         if (!(xOrO.equals("X") || xOrO.equals("O"))) {
             throw new IllegalArgumentException("Please input only X and O");
         }
+        if (column >= _columns || row >= _rows){
+            throw new IllegalArgumentException("Coordinates outside of grid created! Try again!");
+        }
         ticTacToeGrid[column][row] = xOrO;
         _lastInput = xOrO;
     }
