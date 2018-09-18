@@ -111,7 +111,6 @@ public class MyGrid {
                     }
                 }
             }
-
         }
 
         int DiagonalInARowCounter_fd = 0;
