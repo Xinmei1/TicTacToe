@@ -70,12 +70,13 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-        for (int j = 0; j < ticTacToeGrid[0].length-1 ; j++) {
+
+        for (int j = 0; j < ticTacToeGrid.length-1 ; j++) {
 
             //winCheckCounter to check "in a column"
             int inAColumnCounter = 0;
 
-            for (int i = 0; i < ticTacToeGrid[0].length-1 ; i++) {
+            for (int i = 0; i < ticTacToeGrid.length-1 ; i++) {
 
                 if (!ticTacToeGrid[j][i].equals("_")) {
 
@@ -94,12 +95,12 @@ public class MyGrid {
             }
         }
 
-        for (int outer = 1; outer < ticTacToeGrid[0].length ; outer++) {
+        for (int outer = 0; outer < ticTacToeGrid.length-1 ; outer++) {
 
             //winCheckCounter to check "in a row"
             int inARowCounter = 0;
 
-            for (int inner = 1; inner < ticTacToeGrid[0].length ; inner++) {
+            for (int inner = 0; inner < ticTacToeGrid.length-1 ; inner++) {
 
                 if (!ticTacToeGrid[inner][outer].equals("_")) {
 
@@ -121,6 +122,7 @@ public class MyGrid {
         /* if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
          takes the lesser to win
          */
+
         int lessToWin = ticTacToeGrid.length;
         if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
             lessToWin = ticTacToeGrid[0].length;
