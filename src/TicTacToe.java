@@ -60,6 +60,10 @@ public class TicTacToe {
                 catch(IllegalArgumentException ex){
                     System.out.println(ex.getMessage());
                 }
+                //Won't let user place x or o outside of grid boundaries
+                catch(ArrayIndexOutOfBoundsException ex){
+                    System.out.println(ex.getMessage());
+                }
 
                 PlayerGrid.getGrid();
 
