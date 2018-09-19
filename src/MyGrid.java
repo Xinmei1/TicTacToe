@@ -24,7 +24,7 @@ public class MyGrid {
     }
 
     public void setUserInput(int column, int row, String xOrO) {
-        if (column >= _columns ||row >= _rows  ){
+        if (column >= _columns || row >= _rows) {
             throw new ArrayIndexOutOfBoundsException("Coordinates outside of grid created! Try again!");
         }
         if (!(xOrO.equals("X") || xOrO.equals("O"))) {
