@@ -27,11 +27,11 @@ public class MyGrid {
         if (column >= _columns ||row >= _rows  ){
             throw new ArrayIndexOutOfBoundsException("Coordinates outside of grid created! Try again!");
         }
-        if (ticTacToeGrid[column][row].equals("O") || ticTacToeGrid[column][row].equals("X")) {
-            throw new IllegalArgumentException("That spot is already taken! Try again!");
-        }
         if (!(xOrO.equals("X") || xOrO.equals("O"))) {
             throw new IllegalArgumentException("Please input only X and O");
+        }
+        if (ticTacToeGrid[column][row].equals("O") || ticTacToeGrid[column][row].equals("X")) {
+            throw new IllegalArgumentException("That spot is already taken! Try again!");
         }
         ticTacToeGrid[column][row] = xOrO;
         _lastInput = xOrO;
