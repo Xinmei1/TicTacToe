@@ -7,26 +7,37 @@ public class TicTacToe {
         //Prompt for starting Tic-Tac-Toe game
         String startGame = MainMenu.newGame();
         String xOrO = "";
+        int rows = 3;
+        int columns = 3;
+        boolean play = false;
 
         //Starting Tic-Tac-Toe game
         while (startGame.equals("Y")) {
 
-            System.out.println("\nNew Tic-Tac-Toe Game Started\n" +
-                    "Setup: How many rows in this grid?");
+            System.out.println("\nNew Tic-Tac-Toe Game Started");
+
+            System.out.println("Setup: How many rows in this grid?");
             Scanner scanner = new Scanner(System.in);
-            int rows = scanner.nextInt();
+            rows = scanner.nextInt();
             System.out.println("Setup: How many columns in this grid?");
-            int columns = scanner.nextInt();
+            columns = scanner.nextInt();
+
 
             //Generates a new object from the MyGrid class, resets grid
-            MyGrid PlayerGrid = new MyGrid(columns, rows);
-            //initializes the Array's elements with spaces
-            PlayerGrid.setGrid();
-            //load board state of the object PlayerGrid
-            PlayerGrid.getGrid();
+            MyGrid PlayerGrid = new MyGrid();
 
-            //loop for playing TicTacToe
-            boolean play = true;
+            /*checking if rows equals columns, because then the diagonal win condition checker doesn't know how many
+            consecutive it takes to win, the row, or the column?
+            */
+            try {
+                PlayerGrid.setGrid(rows, columns);
+                play = true;
+                //load board state of the object PlayerGrid
+                PlayerGrid.getGrid();
+
+            } catch (IllegalArgumentException ex) {
+                System.out.println(ex.getMessage());
+            }
 
             //Loops unless Game Over, or User presses N or Q
             while (play) {

@@ -9,13 +9,22 @@ public class MyGrid {
     private String _lastInput;
 
     //MyGrid constructor
-    public MyGrid(int columns, int rows) {
-        _columns = columns;
-        _rows = rows;
-        ticTacToeGrid = new String[_columns][_rows];
+    public MyGrid() {
+
     }
 
-    public void setGrid() {
+    public void setGrid(int columns, int rows) {
+
+        if (!(columns == rows))
+        {
+            throw new IllegalArgumentException("Rows must equal columns");
+        }
+
+        _columns = columns;
+        _rows = rows;
+
+        ticTacToeGrid = new String[_columns][_rows];
+
         for (int c = 0; c < _columns; c++) {
             for (int r = 0; r < _rows; r++) {
                 ticTacToeGrid[c][r] = "_";
@@ -97,7 +106,7 @@ public class MyGrid {
         }
 
         int DiagonalInARowCounter_bk = 0;
-        for (int diag = 0; diag < ticTacToeGrid[0].length - 1; diag++) {
+        for (int diag = 0; diag < ticTacToeGrid.length - 1; diag++) {
 
             if (!ticTacToeGrid[diag][diag].equals("_")) {
 
@@ -109,7 +118,7 @@ public class MyGrid {
                     DiagonalInARowCounter_bk++;
 
                     //if it matches as many times as it loops, that's "diagonal"
-                    if (DiagonalInARowCounter_bk == ticTacToeGrid[0].length - 1 || DiagonalInARowCounter_bk > ticTacToeGrid[0].length - 1) {
+                    if (DiagonalInARowCounter_bk == ticTacToeGrid.length - 1 || DiagonalInARowCounter_bk > ticTacToeGrid.length - 1) {
                         return true;
                     }
                 }
@@ -119,7 +128,7 @@ public class MyGrid {
         int DiagonalInARowCounter_fd = 0;
         int rowIncrement = 0;
 
-        for (int columnDecrement = ticTacToeGrid[0].length - 1; columnDecrement > 0; --columnDecrement) {
+        for (int columnDecrement = ticTacToeGrid.length - 1; columnDecrement > 0; --columnDecrement) {
 
             if (!ticTacToeGrid[columnDecrement][rowIncrement].equals("_")) {
 
