@@ -13,12 +13,25 @@ public class MyGrid {
 
     }
 
-    public void setGrid(int columns, int rows) {
+    public void setSafeGrid(int columns, int rows) {
 
-        if (!(columns == rows))
-        {
+        if (!(columns == rows)) {
             throw new IllegalArgumentException("Rows must equal columns");
         }
+
+        _columns = columns;
+        _rows = rows;
+
+        ticTacToeGrid = new String[_columns][_rows];
+
+        for (int c = 0; c < _columns; c++) {
+            for (int r = 0; r < _rows; r++) {
+                ticTacToeGrid[c][r] = "_";
+            }
+        }
+    }
+
+    public void setGrid(int columns, int rows) {
 
         _columns = columns;
         _rows = rows;
@@ -57,12 +70,12 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-        for (int j = 0; j < ticTacToeGrid[0].length - 1; j++) {
+        for (int j = 0; j < ticTacToeGrid[0].length-1 ; j++) {
 
             //winCheckCounter to check "in a column"
             int inAColumnCounter = 0;
 
-            for (int i = 0; i < ticTacToeGrid[0].length - 1; i++) {
+            for (int i = 0; i < ticTacToeGrid[0].length-1 ; i++) {
 
                 if (!ticTacToeGrid[j][i].equals("_")) {
 
@@ -81,12 +94,12 @@ public class MyGrid {
             }
         }
 
-        for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
+        for (int outer = 1; outer < ticTacToeGrid[0].length ; outer++) {
 
             //winCheckCounter to check "in a row"
             int inARowCounter = 0;
 
-            for (int inner = 0; inner < ticTacToeGrid.length - 1; inner++) {
+            for (int inner = 1; inner < ticTacToeGrid[0].length ; inner++) {
 
                 if (!ticTacToeGrid[inner][outer].equals("_")) {
 
@@ -105,8 +118,16 @@ public class MyGrid {
             }
         }
 
+        /* if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
+         takes the lesser to win
+         */
+        int lessToWin = ticTacToeGrid.length;
+        if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
+            lessToWin = ticTacToeGrid[0].length;
+        }
+
         int DiagonalInARowCounter_bk = 0;
-        for (int diag = 0; diag < ticTacToeGrid.length - 1; diag++) {
+        for (int diag = 0; diag < lessToWin - 1; diag++) {
 
             if (!ticTacToeGrid[diag][diag].equals("_")) {
 
@@ -128,7 +149,15 @@ public class MyGrid {
         int DiagonalInARowCounter_fd = 0;
         int rowIncrement = 0;
 
-        for (int columnDecrement = ticTacToeGrid.length - 1; columnDecrement > 0; --columnDecrement) {
+         /* if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
+         takes the lesser to win
+         */
+        lessToWin = ticTacToeGrid.length;
+        if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
+            lessToWin = ticTacToeGrid[0].length;
+        }
+
+        for (int columnDecrement = lessToWin - 1; columnDecrement > 0; --columnDecrement) {
 
             if (!ticTacToeGrid[columnDecrement][rowIncrement].equals("_")) {
 
