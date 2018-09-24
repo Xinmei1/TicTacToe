@@ -7,20 +7,23 @@ public class TicTacToe {
         //Prompt for starting Tic-Tac-Toe game
         String startGame = MainMenu.newGame();
         String xOrO = "";
-        int rows = 3;
-        int columns = 3;
-        boolean play = false;
+        int rows ;
+        int columns ;
+        boolean play;
 
         //Starting Tic-Tac-Toe game
         while (startGame.equals("Y")) {
 
             System.out.println("\nNew Tic-Tac-Toe Game Started");
 
-            System.out.println("Turn on symmetric grid creation? (Y/N)");
+
+            //System.out.println("Turn on symmetric grid creation? (Y/N)");
+
             Scanner scanner = new Scanner(System.in);
 
             //tracker to force row == column
-            String safeGrid = scanner.nextLine().toUpperCase();
+            //String safeGrid = scanner.nextLine().toUpperCase();
+
 
             System.out.println("Setup: How many rows in this grid?");
             rows = scanner.nextInt();
@@ -31,28 +34,27 @@ public class TicTacToe {
             //Generates a new object from the MyGrid class, resets grid
             MyGrid PlayerGrid = new MyGrid();
 
-            /*checking if rows equals columns, because then the diagonal win condition checker doesn't know how many
-            consecutive it takes to win, the row, or the column?
-            */
+            //checking if rows equals columns, because then the diagonal win condition checker doesn't know how many
+            //consecutive it takes to win, the row, or the column?
 
-            if (safeGrid.equals("Y")) {
-
-                try {
-                    PlayerGrid.setSafeGrid(rows, columns);
-                    play = true;
+            //if (safeGrid.equals("Y")) {
+            //
+            //    try {
+            //PlayerGrid.setSafeGrid(rows, columns);
+            //        play = true;
                     //load board state of the object PlayerGrid
-                    PlayerGrid.getGrid();
-
-                } catch (IllegalArgumentException ex) {
-                    System.out.println(ex.getMessage());
-                }
-
-            } else {
+            //        PlayerGrid.getGrid();
+            //
+            //    } catch (IllegalArgumentException ex) {
+            //        System.out.println(ex.getMessage());
+            //    }
+            //
+            //} else {
                 PlayerGrid.setGrid(rows, columns);
                 play = true;
                 //load board state of the object PlayerGrid
                 PlayerGrid.getGrid();
-            }
+            //}
 
             //Loops unless Game Over, or User presses N or Q
             while (play) {

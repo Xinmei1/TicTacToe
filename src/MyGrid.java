@@ -71,12 +71,12 @@ public class MyGrid {
     public boolean returnsWin() {
 
 
-        for (int j = 0; j < ticTacToeGrid.length-1 ; j++) {
+        for (int j = 0; j < ticTacToeGrid.length - 1; j++) {
 
             //winCheckCounter to check "in a column"
             int inAColumnCounter = 0;
 
-            for (int i = 0; i < ticTacToeGrid.length-1 ; i++) {
+            for (int i = 0; i < ticTacToeGrid.length - 1; i++) {
 
                 if (!ticTacToeGrid[j][i].equals("_")) {
 
@@ -85,6 +85,7 @@ public class MyGrid {
 
                         //increments whenever the Strings match
                         inAColumnCounter++;
+                        System.out.println("i am counting columns");
 
                         //if it matches as many times as it loops, that's "in a column"
                         if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
@@ -95,20 +96,24 @@ public class MyGrid {
             }
         }
 
-        for (int outer = 0; outer < ticTacToeGrid.length-1 ; outer++) {
+        for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
 
             //winCheckCounter to check "in a row"
             int inARowCounter = 0;
 
-            for (int inner = 0; inner < ticTacToeGrid.length-1 ; inner++) {
+            for (int inner = 0; inner < ticTacToeGrid.length - 1; inner++) {
 
-                if (!ticTacToeGrid[inner][outer].equals("_")) {
 
-                    //keeps looping till the entire length of the Array
-                    if (ticTacToeGrid[inner][outer].equals(ticTacToeGrid[inner + 1][outer])) {
+                //keeps looping till the entire length of the Array
+                if (ticTacToeGrid[inner][outer].equals(ticTacToeGrid[inner + 1][outer])) {
+
+
+                    if (!ticTacToeGrid[inner][outer].equals("_")) {
+
 
                         //increments whenever the Strings match
                         inARowCounter++;
+                        System.out.println("I am counting rows");
 
                         //if it matches as many times as it loops, that's "in a row"
                         if (inARowCounter == ticTacToeGrid.length - 1) {
@@ -118,6 +123,8 @@ public class MyGrid {
                 }
             }
         }
+
+
 
         /* if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
          takes the lesser to win
@@ -129,7 +136,9 @@ public class MyGrid {
         }
 
         int DiagonalInARowCounter_bk = 0;
-        for (int diag = 0; diag < lessToWin - 1; diag++) {
+        for (
+                int diag = 0;
+                diag < lessToWin - 1; diag++) {
 
             if (!ticTacToeGrid[diag][diag].equals("_")) {
 
@@ -139,6 +148,7 @@ public class MyGrid {
 
                     //increments whenever the Strings match
                     DiagonalInARowCounter_bk++;
+                    System.out.println("i am counting backwards diagonal");
 
                     //if it matches as many times as it loops, that's "diagonal"
                     if (DiagonalInARowCounter_bk == ticTacToeGrid.length - 1 || DiagonalInARowCounter_bk > ticTacToeGrid.length - 1) {
@@ -159,7 +169,9 @@ public class MyGrid {
             lessToWin = ticTacToeGrid[0].length;
         }
 
-        for (int columnDecrement = lessToWin - 1; columnDecrement > 0; --columnDecrement) {
+        for (
+                int columnDecrement = lessToWin - 1;
+                columnDecrement > 0; --columnDecrement) {
 
             if (!ticTacToeGrid[columnDecrement][rowIncrement].equals("_")) {
 
@@ -169,6 +181,7 @@ public class MyGrid {
 
                     //increments whenever the Strings match
                     DiagonalInARowCounter_fd++;
+                    System.out.println("I am counting forward diagonal");
 
                     //if it matches as many times as it loops, that's "backwards diagonal"
                     if (DiagonalInARowCounter_fd == ticTacToeGrid[0].length - 1 || DiagonalInARowCounter_fd > ticTacToeGrid[0].length - 1) {
