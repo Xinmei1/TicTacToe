@@ -82,7 +82,7 @@ public class TicTacToe {
                 int userColumn = scanner1.nextInt();
 
                 try {
-                    PlayerGrid.setUserInput(userColumn - 1, userRow - 1, xOrO);
+                    PlayerGrid.setUserInput(userRow - 1, userColumn - 1, xOrO);
                 }
                 //Won't let user enter a spot already filled, and won't let user place x or o outside of grid boundaries
                 catch (IllegalArgumentException | ArrayIndexOutOfBoundsException ex) {
@@ -108,6 +108,7 @@ public class TicTacToe {
             if (xOrO.equals("Q")) {
                 startGame = MainMenu.restartGame();
             }
+
         }
     }
 }
