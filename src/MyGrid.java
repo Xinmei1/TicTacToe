@@ -72,25 +72,33 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
+        //winCheckCounter to check "in a column"
+        int inAColumnCounter = 0;
+
         //Consecutive in a column
         //This loop will loop the row by row
-        for (int j = 0; j < ticTacToeGrid.length; j++) {
+        for (int j = 0; j < ticTacToeGrid.length-1; j++) {
 
-            //winCheckCounter to check "in a column"
-            int inAColumnCounter = 0;
+            System.out.println("loop j");
 
             //this loop will loop through the columns
             for (int i = 0; i < ticTacToeGrid[0].length-1; i++) {
+
+                System.out.println("loop i");
 
                 //but only if it is not an underscore
                 if (!ticTacToeGrid[i][j].equals("_")) {
 
                     //keeps looping till the entire length of the Array
-                    if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i+1][j])) {
+                    if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j+1])) {
+
+                        System.out.println("in a column match");
 
                         //increments whenever the Strings match
                         inAColumnCounter++;
+
                         System.out.println("I am counting N consecutive in a column");
+                        
                         //if it matches as many times as it loops, that's "in a column"
                         if (inAColumnCounter == ticTacToeGrid[0].length-1) {
                             System.out.println("Game Over! "+ ticTacToeGrid[j][i]+" Won by getting " +
