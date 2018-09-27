@@ -72,7 +72,7 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-        //THIS WILL CHECK FOR "N" CONSECUTIVE IN A COLUMN
+        //Consecutive in a column
         //This loop will loop the row by row
         for (int j = 0; j < ticTacToeGrid.length; j++) {
 
@@ -102,6 +102,7 @@ public class MyGrid {
             }
         }
 
+        //<editor-fold desc="Consecutive in a row">
         for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
 
             //winCheckCounter to check "in a row"
@@ -129,7 +130,9 @@ public class MyGrid {
                 }
             }
         }
+        //</editor-fold>
 
+        //<editor-fold desc="Backwards Diagonal">
         /* if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
          takes the lesser to win
          */
@@ -161,7 +164,9 @@ public class MyGrid {
                 }
             }
         }
+        //</editor-fold>
 
+        //region Forward Diagonal
         int DiagonalInARowCounter_fd = 0;
         int rowIncrement = 0;
 
@@ -195,6 +200,7 @@ public class MyGrid {
                 rowIncrement++;
             }
         }
+        //endregion
 
         return false;
     }
