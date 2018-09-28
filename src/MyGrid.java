@@ -97,26 +97,23 @@ public class MyGrid {
         //consecutive in a row
         //loops down grid
         for (int i = 0; i <= ticTacToeGrid[0].length - 1; i++) {
-
             int inARowCounter = 0;
 
+            //loops across the grid
             for (int j = 0; j <= ticTacToeGrid.length - 2; j++) {
 
-                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i + 1][j])) {
+                //increments whenever the Strings match
+                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1]) && !ticTacToeGrid[i][j].equals("_")) {
+                    inARowCounter++;
 
-                    if (!ticTacToeGrid[i][j].equals("_")) {
-
-                        //increments whenever the Strings match
-                        inARowCounter++;
-
-                        //if it matches as many times as it loops, that's "in a row"
-                        if (inARowCounter == ticTacToeGrid.length - 1) {
-                            System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
-                                    ticTacToeGrid.length + " in a row!");
-                            return true;
-                        }
+                    //if it matches as many times as it loops, that's "in a row"
+                    if (inARowCounter == ticTacToeGrid.length - 1) {
+                        System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
+                                ticTacToeGrid.length + " in a row!");
+                        return true;
                     }
                 }
+
             }
         }
 
