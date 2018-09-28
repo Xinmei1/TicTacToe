@@ -31,10 +31,10 @@ public class MyGrid {
 //       }
 //   }
 
-    public void setGrid(int columns, int rows) {
+    public void setGrid(int rows, int columns) {
 
-        _columns = columns;
         _rows = rows;
+        _columns = columns;
 
         ticTacToeGrid = new String[_rows][_columns];
 
@@ -45,7 +45,7 @@ public class MyGrid {
         }
     }
 
-    public void setUserInput(int column, int row, String xOrO) {
+    public void setUserInput(int row, int column, String xOrO) {
         if (column >= _columns || row >= _rows) {
             throw new ArrayIndexOutOfBoundsException("Coordinates outside of grid created! Try again!");
         }
@@ -64,7 +64,7 @@ public class MyGrid {
     public void getGrid() {
         for (int c = 0; c < _columns; c++) {
             for (int r = 0; r < _rows; r++) {
-                System.out.print("|" + ticTacToeGrid[r][c]);
+                System.out.print("|" + ticTacToeGrid[c][r]);
             }
             System.out.print("|\n");
         }
@@ -73,17 +73,18 @@ public class MyGrid {
     public boolean returnsWin() {
 
         //<editor-fold desc="consecutive in a column">
+
         for (int j = 0; j <= (ticTacToeGrid.length - 1); j++) {
             System.out.println("j is :"+j);
-            System.out.println("length is: "+ticTacToeGrid.length);
 
             //winCheckCounter to check "in a column"
             int inAColumnCounter = 0;
 
             //this loop will loop through the columns
-            for (int i = 0; i < ticTacToeGrid[0].length - 1; i++) {
+            for (int i = 0; i <= ticTacToeGrid[0].length - 2; i++) {
 
                 System.out.println("j is: " + j + " i is: " + i);
+                System.out.println(ticTacToeGrid[i][j]+", "+ ticTacToeGrid[i+1][j]);
 
                 //keeps looping till the entire length of the Array
                 if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i+1][j]) && !ticTacToeGrid[i][j].equals("_")) {
@@ -92,7 +93,7 @@ public class MyGrid {
                     System.out.println("I have this much in a column: " + inAColumnCounter);
 
                     if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
-                        System.out.println("Game Over! " + ticTacToeGrid[j][i] + " Won by getting " +
+                        System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
                                 ticTacToeGrid[0].length + " in a column!");
                         return true;
                     }
