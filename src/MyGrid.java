@@ -113,34 +113,24 @@ public class MyGrid {
             }
         }
 
-        //Backwards Diagonal win logic
-        int lessToWin = ticTacToeGrid.length;
-        if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
-            lessToWin = ticTacToeGrid[0].length;
-        }
+        //Makes sure you can win, by making a backwards diagonal, even with an uneven grid (or even grid)
+        //where the number of columns, is greater than the number of rows
+        //if this is the case, you always will need a cell from the first row
+        if (ticTacToeGrid.length >= ticTacToeGrid[0].length) {
+            for (int i = 0; i <= ticTacToeGrid.length - 1; i++) {
 
-        int DiagonalInARowCounter_bk = 0;
-        for (
-                int diag = 0;
-                diag < lessToWin - 1; diag++) {
-
-            if (!ticTacToeGrid[diag][diag].equals("_")) {
-
-                //checks diagonal
-                //keeps looping till the entire length of the Array
-                if (ticTacToeGrid[diag][diag].equals(ticTacToeGrid[diag + 1][diag + 1])) {
-
-                    //increments whenever the Strings match
-                    DiagonalInARowCounter_bk++;
-                    System.out.println("i am counting backwards diagonal");
-
-                    //if it matches as many times as it loops, that's "diagonal"
-                    if (DiagonalInARowCounter_bk == ticTacToeGrid.length - 1 || DiagonalInARowCounter_bk > ticTacToeGrid.length - 1) {
-                        return true;
-                    }
-                }
             }
+
         }
+
+        //Makes sure you can win, by making a backwards diagonal, even with an uneven grid
+        //where the number of rows, is greater than the number of columns
+        //if this is the case, you will always need a cell from the first column
+        if (ticTacToeGrid[0].length > ticTacToeGrid.length) {
+
+        }
+
+
 
         /*
         int DiagonalInARowCounter_fd = 0;
