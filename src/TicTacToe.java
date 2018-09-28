@@ -96,9 +96,6 @@ public class TicTacToe {
                 //checks if object PlayerGrid's field variables have met it's winCondition method
                 if (PlayerGrid.returnsWin()) {
 
-                    //static game over message from MyGrid class, not an instantiated object
-                    PlayerGrid.printWin();
-
                     play = false;
                     startGame = MainMenu.restartGame();
                 }

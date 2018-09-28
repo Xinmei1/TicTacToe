@@ -73,44 +73,32 @@ public class MyGrid {
     public boolean returnsWin() {
 
         //<editor-fold desc="consecutive in a column">
-        //winCheckCounter to check "in a column"
-        int inAColumnCounter = 0;
-
-        //This loop will loop the row by row, Consecutive in a column
         for (int j = 0; j < ticTacToeGrid.length - 1; j++) {
+            System.out.println("j is :"+j);
 
-            System.out.println("loop j");
+            //winCheckCounter to check "in a column"
+            int inAColumnCounter = 0;
 
             //this loop will loop through the columns
             for (int i = 0; i < ticTacToeGrid[0].length - 1; i++) {
 
-                System.out.println("loop i");
-
+                System.out.println("j is: " + j + " i is: " + i);
 
                 //keeps looping till the entire length of the Array
-                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1])) {
-
-                    System.out.println("in a column match");
+                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i+1][j]) && !ticTacToeGrid[i][j].equals("_")) {
 
                     inAColumnCounter++;
 
-                    System.out.println("I am counting N consecutive in a column");
-
-                    //if it matches as many times as it loops, that's "in a column"
-                    if (!ticTacToeGrid[i][j].equals("_")) {
-
-                        if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
-                            System.out.println("Game Over! " + ticTacToeGrid[j][i] + " Won by getting " +
-                                    ticTacToeGrid[0].length + " in a column!");
-                            return true;
-                        }
+                    if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
+                        System.out.println("Game Over! " + ticTacToeGrid[j][i] + " Won by getting " +
+                                ticTacToeGrid[0].length + " in a column!");
+                        return true;
                     }
                 }
             }
         }
-
         //</editor-fold>
-
+/*
         //<editor-fold desc="Consecutive in a row">
         for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
 
@@ -142,9 +130,9 @@ public class MyGrid {
         //</editor-fold>
 
         //<editor-fold desc="Backwards Diagonal">
-        /* if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
+        // if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
          takes the lesser to win
-         */
+
 
         int lessToWin = ticTacToeGrid.length;
         if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
@@ -175,13 +163,13 @@ public class MyGrid {
         }
         //</editor-fold>
 
-        //region Forward Diagonal
+        //<editor-fold desc="Diagonal_fd">
         int DiagonalInARowCounter_fd = 0;
         int rowIncrement = 0;
 
-         /* if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
+         // if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
          takes the lesser to win
-         */
+
         lessToWin = ticTacToeGrid.length;
         if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
             lessToWin = ticTacToeGrid[0].length;
@@ -209,8 +197,8 @@ public class MyGrid {
                 rowIncrement++;
             }
         }
-        //endregion
-
+        //</editor-fold>
+*/
         return false;
     }
 
