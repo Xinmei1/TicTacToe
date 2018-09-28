@@ -5,9 +5,6 @@ public class MyGrid {
     private int _rows;
     private String[][] ticTacToeGrid;
 
-    //_lastInput used to tell who won
-    private String _lastInput;
-
     //MyGrid constructor
     public MyGrid() {
 
@@ -46,6 +43,7 @@ public class MyGrid {
     }
 
     public void setUserInput(int row, int column, String xOrO) {
+
         if (column >= _columns || row >= _rows) {
             throw new ArrayIndexOutOfBoundsException("Coordinates outside of grid created! Try again!");
         }
@@ -56,9 +54,7 @@ public class MyGrid {
             throw new IllegalArgumentException("That spot is already taken! Try again!");
         }
 
-        //this is how indexing works?
         ticTacToeGrid[row][column] = xOrO;
-        _lastInput = xOrO;
     }
 
     public void getGrid() {
@@ -94,7 +90,7 @@ public class MyGrid {
             }
         }
 
-        //consecutive in a row
+        //checks for consecutive in a row
         //loops down grid
         for (int i = 0; i <= ticTacToeGrid[0].length - 1; i++) {
             int inARowCounter = 0;
@@ -117,12 +113,7 @@ public class MyGrid {
             }
         }
 
-/*
-        //<editor-fold desc="Backwards Diagonal">
-        // if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
-         takes the lesser to win
-
-
+        //Backwards Diagonal win logic
         int lessToWin = ticTacToeGrid.length;
         if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
             lessToWin = ticTacToeGrid[0].length;
@@ -150,9 +141,8 @@ public class MyGrid {
                 }
             }
         }
-        //</editor-fold>
 
-        //<editor-fold desc="Diagonal_fd">
+        /*
         int DiagonalInARowCounter_fd = 0;
         int rowIncrement = 0;
 
@@ -191,9 +181,4 @@ public class MyGrid {
         return false;
     }
 
-    public void printWin() {
-
-        System.out.println("GAME OVER, " + _lastInput + " WON!\n");
-
-    }
 }
