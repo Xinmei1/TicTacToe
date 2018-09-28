@@ -72,26 +72,19 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-        //<editor-fold desc="consecutive in a column">
-
-        for (int j = 0; j <= (ticTacToeGrid.length - 1); j++) {
-            System.out.println("j is :"+j);
-
-            //winCheckCounter to check "in a column"
+        //checks for consecutive in a column
+        //loops across grid
+        for (int j = 0; j <= ticTacToeGrid.length - 1; j++) {
             int inAColumnCounter = 0;
 
-            //this loop will loop through the columns
+            //loops down grid
             for (int i = 0; i <= ticTacToeGrid[0].length - 2; i++) {
 
-                System.out.println("j is: " + j + " i is: " + i);
-                System.out.println(ticTacToeGrid[i][j]+", "+ ticTacToeGrid[i+1][j]);
-
-                //keeps looping till the entire length of the Array
-                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i+1][j]) && !ticTacToeGrid[i][j].equals("_")) {
-
+                //compares cell with cell below it and increment if string equals
+                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i + 1][j]) && !ticTacToeGrid[i][j].equals("_")) {
                     inAColumnCounter++;
-                    System.out.println("I have this much in a column: " + inAColumnCounter);
 
+                    //returns true if consecutive increment conditions match, and outputs a win string
                     if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
                         System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
                                 ticTacToeGrid[0].length + " in a column!");
@@ -100,38 +93,34 @@ public class MyGrid {
                 }
             }
         }
-        //</editor-fold>
-/*
-        //<editor-fold desc="Consecutive in a row">
-        for (int outer = 0; outer < ticTacToeGrid.length - 1; outer++) {
 
-            //winCheckCounter to check "in a row"
+        //consecutive in a row
+        //loops down grid
+        for (int i = 0; i <= ticTacToeGrid[0].length - 1; i++) {
+
             int inARowCounter = 0;
 
-            for (int inner = 0; inner < ticTacToeGrid.length - 1; inner++) {
+            for (int j = 0; j <= ticTacToeGrid.length - 2; j++) {
 
+                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i + 1][j])) {
 
-                //keeps looping till the entire length of the Array
-                if (ticTacToeGrid[inner][outer].equals(ticTacToeGrid[inner + 1][outer])) {
-
-
-                    if (!ticTacToeGrid[inner][outer].equals("_")) {
-
+                    if (!ticTacToeGrid[i][j].equals("_")) {
 
                         //increments whenever the Strings match
                         inARowCounter++;
-                        System.out.println("I am counting rows");
 
                         //if it matches as many times as it loops, that's "in a row"
                         if (inARowCounter == ticTacToeGrid.length - 1) {
+                            System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
+                                    ticTacToeGrid.length + " in a row!");
                             return true;
                         }
                     }
                 }
             }
         }
-        //</editor-fold>
 
+/*
         //<editor-fold desc="Backwards Diagonal">
         // if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
          takes the lesser to win
