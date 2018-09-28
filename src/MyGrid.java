@@ -73,8 +73,9 @@ public class MyGrid {
     public boolean returnsWin() {
 
         //<editor-fold desc="consecutive in a column">
-        for (int j = 0; j < ticTacToeGrid.length - 1; j++) {
+        for (int j = 0; j <= (ticTacToeGrid.length - 1); j++) {
             System.out.println("j is :"+j);
+            System.out.println("length is: "+ticTacToeGrid.length);
 
             //winCheckCounter to check "in a column"
             int inAColumnCounter = 0;
