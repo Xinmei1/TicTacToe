@@ -91,10 +91,11 @@ public class TicTacToe {
 
                 PlayerGrid.getGrid();
 
-                PlayerGrid.returnsWin();
+                boolean didIWin = PlayerGrid.returnsWin();
+
 
                 //checks if object PlayerGrid's field variables have met it's winCondition method
-                if (PlayerGrid.returnsWin()) {
+                if (didIWin) {
 
                     play = false;
                     startGame = MainMenu.restartGame();

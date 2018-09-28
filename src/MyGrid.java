@@ -89,6 +89,7 @@ public class MyGrid {
                 if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i+1][j]) && !ticTacToeGrid[i][j].equals("_")) {
 
                     inAColumnCounter++;
+                    System.out.println("I have this much in a column: " + inAColumnCounter);
 
                     if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
                         System.out.println("Game Over! " + ticTacToeGrid[j][i] + " Won by getting " +
