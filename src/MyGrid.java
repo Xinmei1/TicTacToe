@@ -58,9 +58,9 @@ public class MyGrid {
     }
 
     public void getGrid() {
-        for (int c = 0; c < _columns; c++) {
-            for (int r = 0; r < _rows; r++) {
-                System.out.print("|" + ticTacToeGrid[c][r]);
+        for (int r = 0; r < _rows; r++) {
+            for (int c = 0; c < _columns; c++) {
+                System.out.print("|" + ticTacToeGrid[r][c]);
             }
             System.out.print("|\n");
         }
