@@ -10,24 +10,6 @@ public class MyGrid {
 
     }
 
-//   public void setSafeGrid(int columns, int rows) {
-
-//       if (!(columns == rows)) {
-//           throw new IllegalArgumentException("Rows must equal columns");
-//       }
-
-//       _columns = columns;
-//       _rows = rows;
-
-//       ticTacToeGrid = new String[_columns][_rows];
-
-//       for (int c = 0; c < _columns; c++) {
-//           for (int r = 0; r < _rows; r++) {
-//               ticTacToeGrid[c][r] = "_";
-//           }
-//       }
-//   }
-
     public void setGrid(int rows, int columns) {
 
         _rows = rows;
@@ -133,50 +115,6 @@ public class MyGrid {
 
         }
 
-        //Makes sure you can win, by making a backwards diagonal, even with an uneven grid
-        //where the number of rows, is greater than the number of columns
-        //if this is the case, you will always need a cell from the first column
-        if (ticTacToeGrid[0].length > ticTacToeGrid.length) {
-
-        }
-
-
-
-        /*
-        int DiagonalInARowCounter_fd = 0;
-        int rowIncrement = 0;
-
-         // if a grid is 3x4, you only need 3 in a consecutive diagonal to win, or 4x3, you only need 3 to win.
-         takes the lesser to win
-
-        lessToWin = ticTacToeGrid.length;
-        if (ticTacToeGrid[0].length < ticTacToeGrid.length) {
-            lessToWin = ticTacToeGrid[0].length;
-        }
-
-        for (
-                int columnDecrement = lessToWin - 1;
-                columnDecrement > 0; --columnDecrement) {
-
-            if (!ticTacToeGrid[columnDecrement][rowIncrement].equals("_")) {
-
-                //checks backwards diagonal, keeps looping backwards from entire length of the Array to 0
-
-                if (ticTacToeGrid[columnDecrement][rowIncrement].equals(ticTacToeGrid[columnDecrement - 1][rowIncrement + 1])) {
-
-                    //increments whenever the Strings match
-                    DiagonalInARowCounter_fd++;
-                    System.out.println("I am counting forward diagonal");
-
-                    //if it matches as many times as it loops, that's "backwards diagonal"
-                    if (DiagonalInARowCounter_fd == ticTacToeGrid[0].length - 1 || DiagonalInARowCounter_fd > ticTacToeGrid[0].length - 1) {
-                        return true;
-                    }
-                }
-                rowIncrement++;
-            }
-        }
-*/
         return false;
     }
 
