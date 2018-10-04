@@ -6,11 +6,7 @@ public class MyGrid {
     private String[][] ticTacToeGrid;
 
     //MyGrid constructor
-    public MyGrid() {
-
-    }
-
-    public void setGrid(int rows, int columns) {
+    public MyGrid(int rows, int columns) {
 
         _rows = rows;
         _columns = columns;
@@ -23,6 +19,7 @@ public class MyGrid {
             }
         }
     }
+
 
     public void setUserInput(int row, int column, String xOrO) {
 

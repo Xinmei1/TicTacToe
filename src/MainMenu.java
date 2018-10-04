@@ -24,6 +24,18 @@ public class MainMenu {
     }
 
     public static void hasStarted(){
-        System.out.println("\nNew Tic-Tac-Toe Game Started");
+        System.out.println("\nNew Tic-Tac-Toe Game has Started");
+    }
+
+    public static int setRows(){
+        System.out.println("Setup: How many rows in this grid?");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
+    public static int setColumns(){
+        System.out.println("Setup: How many columns in this grid?");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
     }
 }
