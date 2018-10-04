@@ -16,14 +16,7 @@ public class TicTacToe {
 
             System.out.println("\nNew Tic-Tac-Toe Game Started");
 
-
-            //System.out.println("Turn on symmetric grid creation? (Y/N)");
-
             Scanner scanner = new Scanner(System.in);
-
-            //tracker to force row == column
-            //String safeGrid = scanner.nextLine().toUpperCase();
-
 
             System.out.println("Setup: How many rows in this grid?");
             rows = scanner.nextInt();
