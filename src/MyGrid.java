@@ -91,11 +91,8 @@ public class MyGrid {
                         return true;
                     }
                 }
-
             }
         }
-
         return false;
     }
-
 }

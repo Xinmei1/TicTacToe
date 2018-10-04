@@ -4,9 +4,9 @@ public class TicTacToe {
 
     public static void main(String[] args) {
 
-        //Prompt for starting Tic-Tac-Toe game
         String startGame = MainMenu.newGame();
         String xOrO = "";
+
         int rows;
         int columns;
         boolean play;
@@ -23,15 +23,12 @@ public class TicTacToe {
             System.out.println("Setup: How many columns in this grid?");
             columns = scanner.nextInt();
 
-
-            //Generates a new object from the MyGrid class, resets grid
+            //Instantiating a new object from the MyGrid class
             MyGrid PlayerGrid = new MyGrid();
-
             PlayerGrid.setGrid(rows, columns);
             play = true;
             //load board state of the object PlayerGrid
             PlayerGrid.getGrid();
-            //}
 
             //Loops unless Game Over, or User presses N or Q
             while (play) {
@@ -61,6 +58,7 @@ public class TicTacToe {
                 try {
                     PlayerGrid.setUserInput(userRow - 1, userColumn - 1, xOrO);
                 }
+
                 //Won't let user enter a spot already filled, and won't let user place x or o outside of grid boundaries
                 catch (IllegalArgumentException | ArrayIndexOutOfBoundsException ex) {
                     System.out.println(ex.getMessage());
@@ -69,7 +67,6 @@ public class TicTacToe {
                 PlayerGrid.getGrid();
 
                 boolean didIWin = PlayerGrid.returnsWin();
-
 
                 //checks if object PlayerGrid's field variables have met it's winCondition method
                 if (didIWin) {
@@ -83,7 +80,6 @@ public class TicTacToe {
             if (xOrO.equals("Q")) {
                 startGame = MainMenu.restartGame();
             }
-
         }
     }
 }

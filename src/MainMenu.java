@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    //MainMenu is static and is always the same, to be as generic as possible
-
     public static String newGame() {
         System.out.println("\nCommand Line Application\n" +
                 "Tic-Tac-Toe\n" +
