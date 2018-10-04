@@ -95,26 +95,6 @@ public class MyGrid {
             }
         }
 
-        //Makes sure you can win, by making a backwards diagonal, even with an uneven grid (or even grid)
-        //where the number of columns, is greater than the number of rows
-        //if this is the case, you always will need a cell from the first row
-
-        if (ticTacToeGrid.length >= ticTacToeGrid[0].length) {
-
-            //do not loop further, or index out of bounds
-            for (int i = 0; i <= (ticTacToeGrid[0].length - ticTacToeGrid.length); i++) {
-
-                int bkDiagonalCounter = 0;
-
-                for (int j = 0; j <= ticTacToeGrid[0].length; j++)
-                    if (ticTacToeGrid[i][i].equals(ticTacToeGrid[i + 1][i + 1]) && !ticTacToeGrid[i][i].equals("_")) {
-                        bkDiagonalCounter++;
-                        System.out.println(bkDiagonalCounter);
-                    }
-            }
-
-        }
-
         return false;
     }
 
