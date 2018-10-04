@@ -50,7 +50,7 @@ public class MyGrid {
         if (!(xOrO.equals("X") || xOrO.equals("O"))) {
             throw new IllegalArgumentException("Please input only X and O");
         }
-        if (ticTacToeGrid[column][row].equals("O") || ticTacToeGrid[column][row].equals("X")) {
+        if (ticTacToeGrid[row][column].equals("O") || ticTacToeGrid[row][column].equals("X")) {
             throw new IllegalArgumentException("That spot is already taken! Try again!");
         }
 
@@ -70,20 +70,20 @@ public class MyGrid {
 
         //checks for consecutive in a column
         //loops across grid
-        for (int j = 0; j <= ticTacToeGrid.length - 1; j++) {
+        for (int j = 0; j <= ticTacToeGrid[0].length - 1; j++) {
             int inAColumnCounter = 0;
 
             //loops down grid
-            for (int i = 0; i <= ticTacToeGrid[0].length - 2; i++) {
+            for (int i = 0; i <= ticTacToeGrid.length - 2; i++) {
 
                 //compares cell with cell below it and increment if string equals
                 if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i + 1][j]) && !ticTacToeGrid[i][j].equals("_")) {
                     inAColumnCounter++;
 
                     //returns true if consecutive increment conditions match, and outputs a win string
-                    if (inAColumnCounter == ticTacToeGrid[0].length - 1) {
+                    if (inAColumnCounter == ticTacToeGrid.length - 1) {
                         System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
-                                ticTacToeGrid[0].length + " in a column!");
+                                ticTacToeGrid.length + " in a column!");
                         return true;
                     }
                 }
@@ -92,26 +92,26 @@ public class MyGrid {
 
         //checks for consecutive in a row
         //loops down grid
-        for (int i = 0; i <= ticTacToeGrid[0].length - 1; i++) {
-            int inARowCounter = 0;
-
-            //loops across the grid
-            for (int j = 0; j <= ticTacToeGrid.length - 2; j++) {
-
-                //increments whenever the Strings match
-                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1]) && !ticTacToeGrid[i][j].equals("_")) {
-                    inARowCounter++;
-
-                    //if it matches as many times as it loops, that's "in a row"
-                    if (inARowCounter == ticTacToeGrid.length - 1) {
-                        System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
-                                ticTacToeGrid.length + " in a row!");
-                        return true;
-                    }
-                }
-
-            }
-        }
+//        for (int i = 0; i <= ticTacToeGrid[0].length - 1; i++) {
+//            int inARowCounter = 0;
+//
+//            //loops across the grid
+//            for (int j = 0; j <= ticTacToeGrid.length - 2; j++) {
+//
+//                //increments whenever the Strings match
+//                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1]) && !ticTacToeGrid[i][j].equals("_")) {
+//                    inARowCounter++;
+//
+//                    //if it matches as many times as it loops, that's "in a row"
+//                    if (inARowCounter == ticTacToeGrid.length - 1) {
+//                        System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
+//                                ticTacToeGrid.length + " in a row!");
+//                        return true;
+//                    }
+//                }
+//
+//            }
+//        }
 
         //Makes sure you can win, by making a backwards diagonal, even with an uneven grid (or even grid)
         //where the number of columns, is greater than the number of rows
