@@ -4,22 +4,22 @@ public class TicTacToe {
 
     public static void main(String[] args) {
 
-        String startGame = MainMenu.newGame();
+        String LoopGame = MainMenu.newGame();
         String xOrO = "";
 
         int rows;
         int columns;
         boolean play;
 
-        //Starting Tic-Tac-Toe game
-        while (startGame.equals("Y")) {
+        //Tic-Tac-Toe game
+        while (LoopGame.equals("Y")) {
 
-            System.out.println("\nNew Tic-Tac-Toe Game Started");
-
+            MainMenu.hasStarted();
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Setup: How many rows in this grid?");
             rows = scanner.nextInt();
+
             System.out.println("Setup: How many columns in this grid?");
             columns = scanner.nextInt();
 
@@ -72,13 +72,13 @@ public class TicTacToe {
                 if (didIWin) {
 
                     play = false;
-                    startGame = MainMenu.restartGame();
+                    LoopGame = MainMenu.restartGame();
                 }
             }
 
             //if User chose to Quit, then give them the choice to restart the game or end program
             if (xOrO.equals("Q")) {
-                startGame = MainMenu.restartGame();
+                LoopGame = MainMenu.restartGame();
             }
         }
     }

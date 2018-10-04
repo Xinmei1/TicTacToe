@@ -22,4 +22,8 @@ public class MainMenu {
                 "\n" + "Tic-Tac-Toe \n(N)ew game (Q)uit\n" +
                 "====================");
     }
+
+    public static void hasStarted(){
+        System.out.println("\nNew Tic-Tac-Toe Game Started");
+    }
 }
