@@ -92,26 +92,26 @@ public class MyGrid {
 
         //checks for consecutive in a row
         //loops down grid
-//        for (int i = 0; i <= ticTacToeGrid[0].length - 1; i++) {
-//            int inARowCounter = 0;
-//
-//            //loops across the grid
-//            for (int j = 0; j <= ticTacToeGrid.length - 2; j++) {
-//
-//                //increments whenever the Strings match
-//                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1]) && !ticTacToeGrid[i][j].equals("_")) {
-//                    inARowCounter++;
-//
-//                    //if it matches as many times as it loops, that's "in a row"
-//                    if (inARowCounter == ticTacToeGrid.length - 1) {
-//                        System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
-//                                ticTacToeGrid.length + " in a row!");
-//                        return true;
-//                    }
-//                }
-//
-//            }
-//        }
+        for (int i = 0; i <= ticTacToeGrid.length - 1; i++) {
+            int inARowCounter = 0;
+
+            //loops across the grid
+            for (int j = 0; j <= ticTacToeGrid[0].length - 2; j++) {
+
+                //increments whenever the Strings match
+                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1]) && !ticTacToeGrid[i][j].equals("_")) {
+                    inARowCounter++;
+
+                    //if it matches as many times as it loops, that's "in a row"
+                    if (inARowCounter == ticTacToeGrid[0].length - 1) {
+                        System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
+                                ticTacToeGrid[0].length + " in a row!");
+                        return true;
+                    }
+                }
+
+            }
+        }
 
         //Makes sure you can win, by making a backwards diagonal, even with an uneven grid (or even grid)
         //where the number of columns, is greater than the number of rows
