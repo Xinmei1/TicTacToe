@@ -1,3 +1,5 @@
+import com.sun.tools.javac.Main;
+
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -5,8 +7,7 @@ public class TicTacToe {
     public static void main(String[] args) {
 
         String LoopGame = MainMenu.newGame();
-        String xOrO = "";
-
+        String xOrO="";
         boolean playing;
 
         while (LoopGame.equals("Y")) {
@@ -16,14 +17,12 @@ public class TicTacToe {
             int columns = MainMenu.setColumns();
             MyGrid PlayerGrid = new MyGrid(rows,columns);
             playing = true;
+            PlayerGrid.printGrid();
 
-            //load board state of the object PlayerGrid
-            PlayerGrid.getGrid();
-
-            //Loops unless Game Over, or User presses N or Q
+            //Loops unless game ends, or User presses N or Q when prompted X or O
             while (playing) {
 
-                MainMenu.helloScreen();
+                MainMenu.screenHeader();
 
                 Scanner scanner1 = new Scanner(System.in);
 
@@ -37,11 +36,8 @@ public class TicTacToe {
                     break;
                 }
 
-                System.out.println("Which row?");
-                int userRow = scanner1.nextInt();
-
-                System.out.println("Which column?");
-                int userColumn = scanner1.nextInt();
+                int userRow = MainMenu.whichRow();
+                int userColumn = MainMenu.whichColumn();
 
                 try {
                     PlayerGrid.setUserInput(userRow - 1, userColumn - 1, xOrO);
@@ -52,7 +48,7 @@ public class TicTacToe {
                     System.out.println(ex.getMessage());
                 }
 
-                PlayerGrid.getGrid();
+                PlayerGrid.printGrid();
 
                 boolean didIWin = PlayerGrid.returnsWin();
 

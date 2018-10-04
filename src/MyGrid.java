@@ -5,7 +5,6 @@ public class MyGrid {
     private int _rows;
     private String[][] ticTacToeGrid;
 
-    //MyGrid constructor
     public MyGrid(int rows, int columns) {
 
         _rows = rows;
@@ -20,7 +19,6 @@ public class MyGrid {
         }
     }
 
-
     public void setUserInput(int row, int column, String xOrO) {
 
         if (column >= _columns || row >= _rows) {
@@ -32,17 +30,7 @@ public class MyGrid {
         if (ticTacToeGrid[row][column].equals("O") || ticTacToeGrid[row][column].equals("X")) {
             throw new IllegalArgumentException("That spot is already taken! Try again!");
         }
-
         ticTacToeGrid[row][column] = xOrO;
-    }
-
-    public void getGrid() {
-        for (int r = 0; r < _rows; r++) {
-            for (int c = 0; c < _columns; c++) {
-                System.out.print("|" + ticTacToeGrid[r][c]);
-            }
-            System.out.print("|\n");
-        }
     }
 
     public boolean returnsWin() {
@@ -92,4 +80,14 @@ public class MyGrid {
         }
         return false;
     }
+
+    public void printGrid() {
+        for (int r = 0; r < _rows; r++) {
+            for (int c = 0; c < _columns; c++) {
+                System.out.print("|" + ticTacToeGrid[r][c]);
+            }
+            System.out.print("|\n");
+        }
+    }
+
 }

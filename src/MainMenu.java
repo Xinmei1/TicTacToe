@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MainMenu {
 
-    //All functions that return stuff
+//All functions that return stuff
 
     public static String newGame() {
         System.out.println("\nCommand Line Application\n" +
@@ -31,13 +31,25 @@ public class MainMenu {
         return scanner.nextInt();
     }
 
-    //All functions that do nothing but prints a String
+    public static int whichRow(){
+        System.out.println("Which row?");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
+    public static int whichColumn(){
+        System.out.println("Which column?");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
+//All functions that do nothing but prints a String
 
     public static void hasStarted(){
         System.out.println("\nNew Tic-Tac-Toe Game has Started");
     }
 
-    public static void helloScreen() {
+    public static void screenHeader() {
         System.out.println("====================" +
                 "\n" + "Tic-Tac-Toe \n(N)ew game (Q)uit\n" +
                 "====================");
