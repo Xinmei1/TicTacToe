@@ -7,26 +7,21 @@ public class TicTacToe {
         String LoopGame = MainMenu.newGame();
         String xOrO = "";
 
-        boolean play;
+        boolean playing;
 
-        //Tic-Tac-Toe game
         while (LoopGame.equals("Y")) {
 
             MainMenu.hasStarted();
-
             int rows = MainMenu.setRows();
             int columns = MainMenu.setColumns();
             MyGrid PlayerGrid = new MyGrid(rows,columns);
-
-            play = true;
+            playing = true;
 
             //load board state of the object PlayerGrid
             PlayerGrid.getGrid();
 
             //Loops unless Game Over, or User presses N or Q
-            while (play) {
-
-                //Generic Header with menu options
+            while (playing) {
 
                 MainMenu.helloScreen();
 
@@ -64,7 +59,7 @@ public class TicTacToe {
                 //checks if object PlayerGrid's field variables have met it's winCondition method
                 if (didIWin) {
 
-                    play = false;
+                    playing = false;
                     LoopGame = MainMenu.restartGame();
                 }
             }

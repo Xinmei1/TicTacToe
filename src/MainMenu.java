@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class MainMenu {
 
+    //All functions that return stuff
+
     public static String newGame() {
         System.out.println("\nCommand Line Application\n" +
                 "Tic-Tac-Toe\n" +
@@ -17,16 +19,6 @@ public class MainMenu {
         return scanner.nextLine().toUpperCase();
     }
 
-    public static void helloScreen() {
-        System.out.println("====================" +
-                "\n" + "Tic-Tac-Toe \n(N)ew game (Q)uit\n" +
-                "====================");
-    }
-
-    public static void hasStarted(){
-        System.out.println("\nNew Tic-Tac-Toe Game has Started");
-    }
-
     public static int setRows(){
         System.out.println("Setup: How many rows in this grid?");
         Scanner scanner = new Scanner(System.in);
@@ -38,4 +30,17 @@ public class MainMenu {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
+
+    //All functions that do nothing but prints a String
+
+    public static void hasStarted(){
+        System.out.println("\nNew Tic-Tac-Toe Game has Started");
+    }
+
+    public static void helloScreen() {
+        System.out.println("====================" +
+                "\n" + "Tic-Tac-Toe \n(N)ew game (Q)uit\n" +
+                "====================");
+    }
+
 }
