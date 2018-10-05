@@ -1,7 +1,3 @@
-import com.sun.tools.javac.Main;
-
-import java.util.Scanner;
-
 public class TicTacToe {
 
     public static void main(String[] args) {
@@ -24,10 +20,7 @@ public class TicTacToe {
 
                 MainMenu.screenHeader();
 
-                Scanner scanner1 = new Scanner(System.in);
-
-                System.out.println("X or O? or (N)/(Q)");
-                xOrO = scanner1.nextLine().toUpperCase();
+                xOrO = MainMenu.xOrO();
 
                 if (xOrO.equals("Q")) {
                     break;
@@ -57,6 +50,7 @@ public class TicTacToe {
 
                     playing = false;
                     LoopGame = MainMenu.restartGame();
+
                 }
             }
 

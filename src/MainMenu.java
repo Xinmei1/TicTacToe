@@ -31,6 +31,12 @@ public class MainMenu {
         return scanner.nextInt();
     }
 
+    public static String xOrO(){
+        System.out.println("X or O? or (N)/(Q)");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
     public static int whichRow(){
         System.out.println("Which row?");
         Scanner scanner = new Scanner(System.in);
