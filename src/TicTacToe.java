@@ -19,7 +19,6 @@ public class TicTacToe {
             while (playing) {
 
                 MainMenu.screenHeader();
-
                 xOrO = MainMenu.xOrO();
 
                 //quits
@@ -34,11 +33,10 @@ public class TicTacToe {
                 int userRow = MainMenu.whichRow();
                 int userColumn = MainMenu.whichColumn();
 
+                //Won't let user enter a spot already filled or outside of grid boundaries
                 try {
                     PlayerGrid.setUserInput(userRow - 1, userColumn - 1, xOrO);
                 }
-
-                //Won't let user enter a spot already filled, and won't let user place x or o outside of grid boundaries
                 catch (IllegalArgumentException | ArrayIndexOutOfBoundsException ex) {
                     System.out.println(ex.getMessage());
                 }
@@ -53,10 +51,11 @@ public class TicTacToe {
                 }
             }
 
-            //if User chose to Quit, then give them the choice to restart the game or end program
+            //if user quits, give the choice to restart or end program
             if (xOrO.equals("Q")) {
                 LoopGame = MainMenu.restartGame();
             }
         }
+
     }
 }

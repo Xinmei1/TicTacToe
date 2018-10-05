@@ -19,31 +19,68 @@ public class MainMenu {
         return scanner.nextLine().toUpperCase();
     }
 
-    public static int setRows(){
+    public static int setRows() {
         System.out.println("Setup: How many rows in this grid?");
+        int choice = 0;
+        String input;
+
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+
+        boolean notAnInteger = true;
+        while (notAnInteger) {
+
+            input = scanner.next();
+
+            try {
+                choice = Integer.parseInt(input);
+                notAnInteger = false;
+
+            } catch (Exception e) {
+                System.out.println("Not an integer");
+            }
+        }
+
+        return choice;
     }
 
-    public static int setColumns(){
+    public static int setColumns() {
         System.out.println("Setup: How many columns in this grid?");
+
+        int choice = 0;
+        String input;
+
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+
+        boolean notAnInteger = true;
+        while (notAnInteger) {
+
+            input = scanner.next();
+
+            try {
+                choice = Integer.parseInt(input);
+                notAnInteger = false;
+
+            } catch (Exception e) {
+                System.out.println("Not an integer");
+            }
+        }
+
+        return choice;
     }
 
-    public static String xOrO(){
+    public static String xOrO() {
         System.out.println("X or O? or (N)/(Q)");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toUpperCase();
     }
 
-    public static int whichRow(){
+    public static int whichRow() {
         System.out.println("Which row?");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
-    public static int whichColumn(){
+    public static int whichColumn() {
         System.out.println("Which column?");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
@@ -51,7 +88,7 @@ public class MainMenu {
 
 //All functions that do nothing but prints a String
 
-    public static void hasStarted(){
+    public static void hasStarted() {
         System.out.println("\nNew Tic-Tac-Toe Game has Started");
     }
 
