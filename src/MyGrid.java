@@ -5,10 +5,33 @@ public class MyGrid {
     private int _rows;
     private String[][] ticTacToeGrid;
 
+    public MyGrid() {
+
+    }
+
     public MyGrid(int rows, int columns) {
 
         _rows = rows;
         _columns = columns;
+
+        ticTacToeGrid = new String[_rows][_columns];
+
+        for (int c = 0; c < _columns; c++) {
+            for (int r = 0; r < _rows; r++) {
+                ticTacToeGrid[r][c] = "_";
+            }
+        }
+    }
+
+    public void setRows() {
+        _rows = MainMenu.setRows();
+    }
+
+    public void setColumns() {
+        _columns = MainMenu.setColumns();
+    }
+
+    public void setBlankGrid() {
 
         ticTacToeGrid = new String[_rows][_columns];
 

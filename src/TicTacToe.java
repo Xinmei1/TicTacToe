@@ -3,28 +3,30 @@ public class TicTacToe {
     public static void main(String[] args) {
 
         String LoopGame = MainMenu.newGame();
-        String xOrO="";
+        String xOrO = "";
         boolean playing;
 
         while (LoopGame.equals("Y")) {
 
             MainMenu.hasStarted();
-            int rows = MainMenu.setRows();
-            int columns = MainMenu.setColumns();
-            MyGrid PlayerGrid = new MyGrid(rows,columns);
-            playing = true;
+            MyGrid PlayerGrid = new MyGrid();
+            PlayerGrid.setRows();
+            PlayerGrid.setColumns();
+            PlayerGrid.setBlankGrid();
             PlayerGrid.printGrid();
+            playing = true;
 
-            //Loops unless game ends, or User presses N or Q when prompted X or O
             while (playing) {
 
                 MainMenu.screenHeader();
 
                 xOrO = MainMenu.xOrO();
 
+                //quits
                 if (xOrO.equals("Q")) {
                     break;
                 }
+                //new game
                 if (xOrO.equals("N")) {
                     break;
                 }
@@ -43,14 +45,11 @@ public class TicTacToe {
 
                 PlayerGrid.printGrid();
 
+                //if someone wins, ask to restart game
                 boolean didIWin = PlayerGrid.returnsWin();
-
-                //checks if object PlayerGrid's field variables have met it's winCondition method
                 if (didIWin) {
-
                     playing = false;
                     LoopGame = MainMenu.restartGame();
-
                 }
             }
 

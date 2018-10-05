@@ -34,7 +34,7 @@ public class MainMenu {
     public static String xOrO(){
         System.out.println("X or O? or (N)/(Q)");
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return scanner.nextLine().toUpperCase();
     }
 
     public static int whichRow(){
