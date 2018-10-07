@@ -66,8 +66,7 @@ public class MyGrid {
 
     public boolean returnsWin() {
 
-        //checks for consecutive in a column
-        //loops across grid
+        //checks for consecutive in a column, loops across grid
         for (int j = 0; j <= ticTacToeGrid[0].length - 1; j++) {
             int inAColumnCounter = 0;
 
@@ -88,8 +87,7 @@ public class MyGrid {
             }
         }
 
-        //checks for consecutive in a row
-        //loops down grid
+        //checks for consecutive in a row, loops down grid
         for (int i = 0; i <= ticTacToeGrid.length - 1; i++) {
             int inARowCounter = 0;
 
@@ -108,6 +106,38 @@ public class MyGrid {
                     }
                 }
             }
+        }
+
+        for (int j = 0; j <1; j++) {
+            int counter = 0;
+            for (int i = 0; i <= ticTacToeGrid.length - 2; i++) {
+                if (ticTacToeGrid[i][i].equals(ticTacToeGrid[i + 1][i + 1]) && !ticTacToeGrid[i][i].equals("_")) {
+                    counter++;
+                    if (counter == ticTacToeGrid.length - 1) {
+                        System.out.println("Game Over! " + ticTacToeGrid[i][i] + " Won by getting " +
+                                ticTacToeGrid.length + " in a backwards diagonal!");
+                        return true;
+                    }
+                }
+            }
+        }
+
+        for (int j = 0; j <1; j++) {
+            int counter = 0;
+            int row =2;
+            for (int column = 0; column < 2; column++){
+                if (ticTacToeGrid[row][column].equals(ticTacToeGrid[row-1][column+1]) && !ticTacToeGrid[row][column].equals("_")){
+                    counter ++;
+                    if (counter == ticTacToeGrid.length - 1) {
+                        System.out.println("Game Over! " + ticTacToeGrid[row][column] + " Won by getting " +
+                                ticTacToeGrid.length + " in a forwards diagonal!");
+                        return true;
+                    }
+                    row--;
+                }
+            }
+
+
         }
         return false;
     }
