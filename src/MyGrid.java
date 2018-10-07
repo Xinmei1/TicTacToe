@@ -27,8 +27,16 @@ public class MyGrid {
         _rows = MainMenu.setRows();
     }
 
+    public void setRows(int rows) {
+        _rows = rows;
+    }
+
     public void setColumns() {
         _columns = MainMenu.setColumns();
+    }
+
+    public void setColumns(int columns){
+        _columns = columns;
     }
 
     public void setBlankGrid() {

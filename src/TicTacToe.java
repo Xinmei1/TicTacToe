@@ -10,8 +10,8 @@ public class TicTacToe {
 
             MainMenu.hasStarted();
             MyGrid PlayerGrid = new MyGrid();
-            PlayerGrid.setRows();
-            PlayerGrid.setColumns();
+            PlayerGrid.setRows(3);
+            PlayerGrid.setColumns(3);
             PlayerGrid.setBlankGrid();
             PlayerGrid.printGrid();
             playing = true;
