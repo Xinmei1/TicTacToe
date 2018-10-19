@@ -100,16 +100,16 @@ public class MyGrid {
             int inARowCounter = 0;
 
             //loops across the grid
-            for (int j = 0; j <= ticTacToeGrid[0].length - 2; j++) {
+            for (int j = 0; j <= ticTacToeGrid[i].length - 2; j++) {
 
                 //increments whenever the Strings match
                 if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1]) && !ticTacToeGrid[i][j].equals("_")) {
                     inARowCounter++;
 
                     //if it matches as many times as it loops, that's "in a row"
-                    if (inARowCounter == ticTacToeGrid[0].length - 1) {
+                    if (inARowCounter == ticTacToeGrid[i].length - 1) {
                         System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
-                                ticTacToeGrid[0].length + " in a row!");
+                                ticTacToeGrid[i].length + " in a row!");
                         return true;
                     }
                 }
