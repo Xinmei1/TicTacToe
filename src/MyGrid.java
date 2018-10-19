@@ -72,6 +72,46 @@ public class MyGrid {
         ticTacToeGrid[row][column] = xOrO;
     }
 
+    public void computerMoveX(){
+        int maxNumX = ticTacToeGrid.length ;
+        int maxNumY = ticTacToeGrid[0].length;
+
+        int i = 0;
+
+        while (i < 1000){
+
+            int randNumX = (int)(Math.random()*maxNumX);
+            int randNumY = (int)(Math.random()*maxNumY);
+
+            if ((ticTacToeGrid[randNumX][randNumY].equals("_"))){
+                ticTacToeGrid[randNumX][randNumY] = "X";
+                i = 0;
+            }
+            i++;
+        }
+
+    }
+
+    public void computerMoveO(){
+        int maxNumX = ticTacToeGrid.length ;
+        int maxNumY = ticTacToeGrid[0].length;
+
+        int i = 0;
+
+        while (i < 1000){
+
+            int randNumX = (int)(Math.random()*maxNumX);
+            int randNumY = (int)(Math.random()*maxNumY);
+
+            if ((ticTacToeGrid[randNumX][randNumY].equals("_"))){
+                ticTacToeGrid[randNumX][randNumY] = "O";
+                i = 1001;
+            }
+            i++;
+        }
+
+    }
+
     public boolean returnsWin() {
 
         //checks for consecutive in a column, loops across grid

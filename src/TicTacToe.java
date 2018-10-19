@@ -36,10 +36,14 @@ public class TicTacToe {
                 //Won't let user enter a spot already filled or outside of grid boundaries
                 try {
                     PlayerGrid.setUserInput(userRow - 1, userColumn - 1, xOrO);
+
+                    if (xOrO.equals("O")){ PlayerGrid.computerMoveX();}
+                    if (xOrO.equals("X")){PlayerGrid.computerMoveO();}
                 }
                 catch (IllegalArgumentException | ArrayIndexOutOfBoundsException ex) {
                     System.out.println(ex.getMessage());
                 }
+
 
                 PlayerGrid.printGrid();
 
