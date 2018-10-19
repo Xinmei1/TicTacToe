@@ -23,7 +23,7 @@ public class MyGrid {
         //}
 
         for (String[] row: ticTacToeGrid){
-            Arrays.fill(row, '_');
+            Arrays.fill(row, "_");
         }
     }
 
