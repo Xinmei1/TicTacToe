@@ -1,4 +1,5 @@
 import java.util.Arrays;
+
 public class MyGrid {
 
     private int _columns;
@@ -22,7 +23,7 @@ public class MyGrid {
         //    }
         //}
 
-        for (String[] row: ticTacToeGrid){
+        for (String[] row : ticTacToeGrid) {
             Arrays.fill(row, "_");
         }
     }
@@ -39,7 +40,7 @@ public class MyGrid {
         _columns = MainMenu.setColumns();
     }
 
-    public void setColumns(int columns){
+    public void setColumns(int columns) {
         _columns = columns;
     }
 
@@ -53,7 +54,7 @@ public class MyGrid {
         //    }
         //}
 
-        for (String[] row: ticTacToeGrid){
+        for (String[] row : ticTacToeGrid) {
             Arrays.fill(row, "_");
         }
     }
@@ -72,18 +73,18 @@ public class MyGrid {
         ticTacToeGrid[row][column] = xOrO;
     }
 
-    public void computerMoveX(){
-        int maxNumX = ticTacToeGrid.length ;
+    public void computerMoveX() {
+        int maxNumX = ticTacToeGrid.length;
         int maxNumY = ticTacToeGrid[0].length;
 
         int i = 0;
 
-        while (i < 1000){
+        while (i < 1000) {
 
-            int randNumX = (int)(Math.random()*maxNumX);
-            int randNumY = (int)(Math.random()*maxNumY);
+            int randNumX = (int) (Math.random() * maxNumX);
+            int randNumY = (int) (Math.random() * maxNumY);
 
-            if ((ticTacToeGrid[randNumX][randNumY].equals("_"))){
+            if ((ticTacToeGrid[randNumX][randNumY].equals("_"))) {
                 ticTacToeGrid[randNumX][randNumY] = "X";
                 i = 0;
             }
@@ -92,18 +93,18 @@ public class MyGrid {
 
     }
 
-    public void computerMoveO(){
-        int maxNumX = ticTacToeGrid.length ;
+    public void computerMoveO() {
+        int maxNumX = ticTacToeGrid.length;
         int maxNumY = ticTacToeGrid[0].length;
 
         int i = 0;
 
-        while (i < 1000){
+        while (i < 1000) {
 
-            int randNumX = (int)(Math.random()*maxNumX);
-            int randNumY = (int)(Math.random()*maxNumY);
+            int randNumX = (int) (Math.random() * maxNumX);
+            int randNumY = (int) (Math.random() * maxNumY);
 
-            if ((ticTacToeGrid[randNumX][randNumY].equals("_"))){
+            if ((ticTacToeGrid[randNumX][randNumY].equals("_"))) {
                 ticTacToeGrid[randNumX][randNumY] = "O";
                 i = 1001;
             }
@@ -115,11 +116,11 @@ public class MyGrid {
     public boolean returnsWin() {
 
         //checks for consecutive in a column, loops across grid
-        for (int j = 0; j <= ticTacToeGrid[0].length - 1; j++) {
+        for (int j = 0; j < ticTacToeGrid[0].length; j++) {
             int inAColumnCounter = 0;
 
             //loops down grid
-            for (int i = 0; i <= ticTacToeGrid.length - 2; i++) {
+            for (int i = 0; i < ticTacToeGrid.length - 1; i++) {
 
                 //compares cell with cell below it and increment if string equals
                 if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i + 1][j]) && !ticTacToeGrid[i][j].equals("_")) {
@@ -135,30 +136,31 @@ public class MyGrid {
             }
         }
 
+
         //checks for consecutive in a row, loops down grid
-        for (int i = 0; i <= ticTacToeGrid.length - 1; i++) {
+        for (String[] element : ticTacToeGrid) {
             int inARowCounter = 0;
 
             //loops across the grid
-            for (int j = 0; j <= ticTacToeGrid[i].length - 2; j++) {
+            for (int j = 0; j < element.length - 1; j++) {
 
                 //increments whenever the Strings match
-                if (ticTacToeGrid[i][j].equals(ticTacToeGrid[i][j + 1]) && !ticTacToeGrid[i][j].equals("_")) {
+                if (element[j].equals(element[j + 1]) && !element[j].equals("_")) {
                     inARowCounter++;
 
                     //if it matches as many times as it loops, that's "in a row"
-                    if (inARowCounter == ticTacToeGrid[i].length - 1) {
-                        System.out.println("Game Over! " + ticTacToeGrid[i][j] + " Won by getting " +
-                                ticTacToeGrid[i].length + " in a row!");
+                    if (inARowCounter == element.length - 1) {
+                        System.out.println("Game Over! " + element[j] + " Won by getting " +
+                                element.length + " in a row!");
                         return true;
                     }
                 }
             }
         }
 
-        for (int j = 0; j <1; j++) {
+        for (int j = 0; j < 1; j++) {
             int counter = 0;
-            for (int i = 0; i <= ticTacToeGrid.length - 2; i++) {
+            for (int i = 0; i < ticTacToeGrid.length - 1; i++) {
                 if (ticTacToeGrid[i][i].equals(ticTacToeGrid[i + 1][i + 1]) && !ticTacToeGrid[i][i].equals("_")) {
                     counter++;
                     if (counter == ticTacToeGrid.length - 1) {
@@ -170,12 +172,12 @@ public class MyGrid {
             }
         }
 
-        for (int j = 0; j <1; j++) {
+        for (int j = 0; j < 1; j++) {
             int counter = 0;
-            int row =2;
-            for (int column = 0; column < 2; column++){
-                if (ticTacToeGrid[row][column].equals(ticTacToeGrid[row-1][column+1]) && !ticTacToeGrid[row][column].equals("_")){
-                    counter ++;
+            int row = 2;
+            for (int column = 0; column < 2; column++) {
+                if (ticTacToeGrid[row][column].equals(ticTacToeGrid[row - 1][column + 1]) && !ticTacToeGrid[row][column].equals("_")) {
+                    counter++;
                     if (counter == ticTacToeGrid.length - 1) {
                         System.out.println("Game Over! " + ticTacToeGrid[row][column] + " Won by getting " +
                                 ticTacToeGrid.length + " in a forwards diagonal!");
