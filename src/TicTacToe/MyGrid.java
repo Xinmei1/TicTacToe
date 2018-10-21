@@ -1,3 +1,5 @@
+package TicTacToe;
+
 import java.util.Arrays;
 
 public class MyGrid {
@@ -6,7 +8,7 @@ public class MyGrid {
     private int _rows;
     private String[][] ticTacToeGrid;
 
-    public MyGrid() {
+    MyGrid() {
 
     }
 
@@ -17,34 +19,24 @@ public class MyGrid {
 
         ticTacToeGrid = new String[_rows][_columns];
 
-        //for (int c = 0; c < _columns; c++) {
-        //    for (int r = 0; r < _rows; r++) {
-        //        ticTacToeGrid[r][c] = "_";
-        //    }
-        //}
-
         for (String[] row : ticTacToeGrid) {
             Arrays.fill(row, "_");
         }
     }
 
-    public void setRows() {
+    void setRows() {
         _rows = MainMenu.setRows();
     }
 
-    public void setRows(int rows) {
-        _rows = rows;
-    }
+    void setRows(int rows) {_rows = rows;}
 
-    public void setColumns() {
-        _columns = MainMenu.setColumns();
-    }
+    public void setColumns() { _columns = MainMenu.setColumns(); }
 
-    public void setColumns(int columns) {
+    void setColumns(int columns) {
         _columns = columns;
     }
 
-    public void setBlankGrid() {
+    void setBlankGrid() {
 
         ticTacToeGrid = new String[_rows][_columns];
 
@@ -59,7 +51,7 @@ public class MyGrid {
         }
     }
 
-    public void setUserInput(int row, int column, String xOrO) {
+    void setUserInput(int row, int column, String xOrO) {
 
         if (column >= _columns || row >= _rows) {
             throw new ArrayIndexOutOfBoundsException("Coordinates outside of grid created! Try again!");
@@ -73,7 +65,7 @@ public class MyGrid {
         ticTacToeGrid[row][column] = xOrO;
     }
 
-    public void computerMoveX() {
+    void computerMoveX() {
         int maxNumX = ticTacToeGrid.length;
         int maxNumY = ticTacToeGrid[0].length;
 
@@ -93,7 +85,7 @@ public class MyGrid {
 
     }
 
-    public void computerMoveO() {
+    void computerMoveO() {
         int maxNumX = ticTacToeGrid.length;
         int maxNumY = ticTacToeGrid[0].length;
 
@@ -113,7 +105,7 @@ public class MyGrid {
 
     }
 
-    public boolean returnsWin() {
+    boolean returnsWin() {
 
         //checks for consecutive in a column, loops across grid
         for (int j = 0; j < ticTacToeGrid[0].length; j++) {
@@ -192,7 +184,7 @@ public class MyGrid {
         return false;
     }
 
-    public void printGrid() {
+    void printGrid() {
         for (int r = 0; r < _rows; r++) {
             for (int c = 0; c < _columns; c++) {
                 System.out.print("|" + ticTacToeGrid[r][c]);
