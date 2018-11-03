@@ -40,12 +40,6 @@ public class MyGrid {
 
         ticTacToeGrid = new String[_rows][_columns];
 
-        //for (int c = 0; c < _columns; c++) {
-        //    for (int r = 0; r < _rows; r++) {
-        //        ticTacToeGrid[r][c] = "_";
-        //    }
-        //}
-
         for (String[] row : ticTacToeGrid) {
             Arrays.fill(row, "_");
         }
