@@ -11,9 +11,7 @@ public class TicTacToe {
         while (LoopGame.equals("Y")) {
 
             MainMenu.hasStarted();
-            MyGrid PlayerGrid = new MyGrid();
-            PlayerGrid.setRows(3);
-            PlayerGrid.setColumns(3);
+            MyGrid PlayerGrid = new MyGrid(3,3);
             PlayerGrid.setBlankGrid();
             PlayerGrid.printGrid();
             playing = true;

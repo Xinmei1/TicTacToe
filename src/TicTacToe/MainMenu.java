@@ -6,7 +6,7 @@ public class MainMenu {
 
 //All functions that return stuff
 
-    static String newGame() {
+    public static String newGame() {
         System.out.println("\nCommand Line Application\n" +
                 "Tic-Tac-Toe\n" +
                 "\nStart New Game?" +
@@ -15,13 +15,13 @@ public class MainMenu {
         return scanner.nextLine().toUpperCase();
     }
 
-    static String restartGame() {
+    public static String restartGame() {
         System.out.println("Restart Tic-Tac-Toe game? (Y)es /(N)o");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toUpperCase();
     }
 
-    static int setRows() {
+    public static int setRows() {
         System.out.println("Setup: How many rows in this grid?");
         int choice = 0;
         String input;
@@ -70,19 +70,19 @@ public class MainMenu {
         return choice;
     }
 
-    static String xOrO() {
+    public static String xOrO() {
         System.out.println("X or O? or (N)/(Q)");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().toUpperCase();
     }
 
-    static int whichRow() {
+    public static int whichRow() {
         System.out.println("Which row?");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
-    static int whichColumn() {
+    public static int whichColumn() {
         System.out.println("Which column?");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
@@ -90,11 +90,11 @@ public class MainMenu {
 
 //All functions that do nothing but prints a String
 
-    static void hasStarted() {
+    public static void hasStarted() {
         System.out.println("\nNew Tic-Tac-Toe Game has Started");
     }
 
-    static void screenHeader() {
+    public static void screenHeader() {
         System.out.println("====================" +
                 "\n" + "Tic-Tac-Toe \n(N)ew game (Q)uit\n" +
                 "====================");
